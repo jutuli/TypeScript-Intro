@@ -110,3 +110,39 @@ document.body.innerHTML += `<p>${samMovie}</p>`;
 document.body.innerHTML += `<p>${susiSamSchool}</p>`;
 document.body.innerHTML += `<p>${susiSamGymMovie}</p>`;
 document.body.innerHTML += `<p>${susiSchoolMovie}</p>`;
+
+// - =============== Level 1-11 ================
+
+const whereIsSam = "Sam is going to school";
+document.body.innerHTML += `<p>${whereIsSam.toUpperCase()}</p>`;
+document.body.innerHTML += `<p>${whereIsSam.toLowerCase()}</p>`;
+
+const samSchoolUpper = whereIsSam
+  .slice(0, 3)
+  .toUpperCase()
+  .concat(whereIsSam.slice(3, 16))
+  .concat(whereIsSam.slice(16).toUpperCase());
+document.body.innerHTML += `<p>${samSchoolUpper}</p>`;
+document.body.innerHTML += `<p>${whereIsSam.toUpperCase()}</p>`;
+document.body.innerHTML += `<p>${whereIsSam.toUpperCase()}</p>`;
+document.body.innerHTML += `<p>${whereIsSam.toUpperCase()}</p>`;
+
+const IsGoingToUpper = whereIsSam
+  .slice(0, 3)
+  .concat(whereIsSam.slice(3, 15).toUpperCase())
+  .concat(whereIsSam.slice(15, 24));
+document.body.innerHTML += `<p>${IsGoingToUpper}</p>`;
+
+const firstLetterCapitalized = whereIsSam
+  .slice(0, 1)
+  .toUpperCase()
+  .concat(whereIsSam.slice(1, 4))
+  .concat(whereIsSam.slice(4, 5).toUpperCase())
+  .concat(whereIsSam.slice(5, 7))
+  .concat(whereIsSam.slice(7, 8).toUpperCase())
+  .concat(whereIsSam.slice(8, 13))
+  .concat(whereIsSam.slice(13, 14).toUpperCase())
+  .concat(whereIsSam.slice(14, 16))
+  .concat(whereIsSam.slice(16, 17).toUpperCase())
+  .concat(whereIsSam.slice(17));
+document.body.innerHTML += `<p>${firstLetterCapitalized}</p>`;
