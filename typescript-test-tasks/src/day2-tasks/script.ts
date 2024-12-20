@@ -48,3 +48,15 @@ document.write(susi2 + " ");
 document.write(is2 + " ");
 document.write(school2 + " ");
 document.write(susiIsSchool2 + " ");
+
+// ? Level 1-7
+const samsStatus = "Sam is good at codingschool";
+
+const badCodingschool = samsStatus.replace("good at coding", "bad at ");
+const goodSchool = samsStatus.replace("coding", "");
+const goodTennis = samsStatus.replace("codingschool", "tennis");
+
+document.open();
+document.write(badCodingschool + " ");
+document.write(goodSchool + " ");
+document.write(goodTennis + " ");
