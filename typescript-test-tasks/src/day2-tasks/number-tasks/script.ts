@@ -73,3 +73,13 @@ console.log(valueNine.toString());
 console.log(valueNine.toString(2));
 console.log(valueNine.toString(8));
 console.log(valueNine.toString(16));
+
+// - ======================= Level 1-2 =================
+console.log("To Fixed");
+console.log(valueOne.toFixed(2));
+console.log(valueTwo.toFixed(2));
+console.log(Number(valueThreeS).toFixed(2));
+console.log(Number(valueSixB).toFixed(2));
+console.log(Number(valueSevenB).toFixed(2));
+console.log(Number(valueEightS).toFixed(2));
+console.log(parseFloat(valueNineS).toFixed(2));
