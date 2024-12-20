@@ -1,5 +1,3 @@
-// ! STRING METHODS
-
 // - =============== Level 1-1 ================
 
 let firstName = "Julia";
