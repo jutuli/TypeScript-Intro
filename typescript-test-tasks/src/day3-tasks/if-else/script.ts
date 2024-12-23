@@ -15,3 +15,20 @@ if (johnScore > maikeScore) {
 } else {
   console.log(`Maike gewinnt das Spiel mit ${maikeScore} Punkten!`);
 }
+
+// - =================== Level 2_3 ==================
+
+function calculation(number: number) {
+  let result = 0;
+  const difference = number - 27;
+  if (difference > 27) {
+    result = difference * 2;
+  } else {
+    result = difference;
+  }
+  console.log(result);
+}
+
+calculation(35);
+calculation(74);
+calculation(123);
