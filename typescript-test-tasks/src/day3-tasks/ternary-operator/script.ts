@@ -32,8 +32,8 @@ isAdult === false
   ? window.alert("Keine Berechtigung")
   : window.confirm("Willkommen");
 
-let randomAge = Math.floor(Math.random() * 120);
-let randomSalary = Math.floor(Math.random() * 15000);
+let randomAge = Math.floor(Math.random() * 121);
+let randomSalary = Math.floor(Math.random() * 15001);
 
 let middleAged = true;
 randomAge >= 40 && randomAge <= 65 ? (middleAged = true) : (middleAged = false);
@@ -46,8 +46,8 @@ randomSalary > 10000
   : console.log("Not that much");
 
 // - ================ LEVEL 2_4 ================
-const numberA = Math.floor(Math.random() * 100);
-const numberB = Math.floor(Math.random() * 100);
+const numberA = Math.floor(Math.random() * 78);
+const numberB = Math.floor(Math.random() * 78);
 console.log("NumberA: " + numberA);
 console.log("NumberB: " + numberB);
 
