@@ -44,3 +44,25 @@ randomSalary > 10000
   : randomSalary > 1500
   ? console.log("Not too much")
   : console.log("Not that much");
+
+// - ================ LEVEL 2_4 ================
+const numberA = Math.floor(Math.random() * 100);
+const numberB = Math.floor(Math.random() * 100);
+console.log("NumberA: " + numberA);
+console.log("NumberB: " + numberB);
+
+// Version 1
+numberA === numberB
+  ? console.log("What a Coincidence!")
+  : numberA > numberB
+  ? console.log("The first number is larger.")
+  : console.log("The second number is larger.");
+
+//   Version 2
+if (numberA === numberB) {
+  console.log("Both numbers are the same.");
+} else if (numberA > numberB) {
+  console.log("Number A is larger.");
+} else {
+  console.log("Number B is larger.");
+}
