@@ -10,3 +10,15 @@ console.log(Math.round(randomNumbers[0]));
 console.log(Math.round(randomNumbers[1]));
 console.log(Math.round(randomNumbers[2]));
 console.log(Math.round(randomNumbers[3]));
+
+// - ============================ LEVEL 1_3 =========================
+const randomNum = Math.random();
+const randomNum1_10 = Math.ceil(Math.random() * 10);
+const randomNum1_100 = Math.ceil(Math.random() * 100);
+// alternativ mit .floor:
+// const randomNum1_10 = Math.floor(Math.random()*10+1)
+// const randomNum1_100 = Math.floor(Math.random()*100+1)
+
+console.log(randomNum, randomNum1_10, randomNum1_100);
+
+// - ============================ LEVEL 2_2 =========================
