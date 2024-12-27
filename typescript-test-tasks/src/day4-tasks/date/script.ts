@@ -46,3 +46,66 @@ if (timeFormatsHTML) {
     timeZone: "UTC",
   })} Uhr</p>`;
 }
+
+// - ========================= LEVEL 3_2 ======================
+const oldDate = new Date(0);
+const nowDate = new Date();
+
+import {
+  differenceInYears,
+  differenceInSeconds,
+  differenceInHours,
+} from "date-fns";
+
+console.log(differenceInYears(nowDate, oldDate));
+console.log(differenceInHours(nowDate, oldDate));
+console.log(differenceInSeconds(nowDate, oldDate));
+
+const myBirthday = new Date("1990-05-01 17:23:12");
+console.log(differenceInYears(nowDate, myBirthday));
+console.log(differenceInYears("2007-04-07", myBirthday));
+
+console.log(myBirthday.toLocaleString("de-DE"));
+console.log(
+  myBirthday.toLocaleString("de-DE", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+  })
+);
+
+console.log(
+  myBirthday.toLocaleDateString("de-DE", {
+    year: "2-digit",
+    month: "2-digit",
+    day: "2-digit",
+  })
+);
+
+console.log(
+  myBirthday.toLocaleDateString("de-DE", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  })
+);
+
+console.log(
+  myBirthday.toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" })
+);
+
+console.log(myBirthday.toLocaleString("de-DE", { weekday: "long" }));
+
+console.log(myBirthday.toLocaleString("de-DE", { month: "long" }));
+
+console.log(
+  `${myBirthday.toLocaleDateString("de-DE", {
+    day: "numeric",
+  })} des ${myBirthday.toLocaleDateString("de-DE", {
+    month: "long",
+  })} im Jahre des Herrn ${myBirthday.toLocaleDateString("de-DE", {
+    year: "numeric",
+  })}`
+);
