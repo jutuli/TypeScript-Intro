@@ -34,6 +34,30 @@ switch (weekdayAsNumber) {
 console.log(weekdayAsString);
 
 // - ====================== LEVEL 2_4 ======================
+const numberA = Math.floor(Math.random() * 78);
+const numberB = Math.floor(Math.random() * 78);
+const result =
+  numberA === numberB
+    ? 1
+    : numberA > numberB
+    ? 2
+    : numberA < numberB
+    ? 3
+    : null;
+
+switch (result) {
+  case 1:
+    console.log("Was für ein Zufall");
+    break;
+  case 2:
+    console.log("Erste Zahl größer");
+    break;
+  case 3:
+    console.log("Zweite Zahl größer");
+    break;
+  default:
+    console.log("Die Zahlen konnten nicht verglichen werden");
+}
 
 // - ====================== LEVEL 2_8 ======================
 
