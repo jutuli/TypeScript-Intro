@@ -60,5 +60,35 @@ switch (result) {
 }
 
 // - ====================== LEVEL 2_8 ======================
+const schoolGrade = Math.ceil(Math.random() * 10);
+
+switch (schoolGrade) {
+  case 1:
+    console.log("sehr gut");
+    break;
+  case 2:
+    console.log("gut");
+    break;
+  case 3:
+    console.log("befriedigend");
+    break;
+  case 4:
+    console.log("ausreichend");
+    break;
+  case 5:
+    console.log("mangelhaft");
+    break;
+  case 6:
+    console.log("unbefriedigend");
+    break;
+  case 7:
+  case 8:
+  case 9:
+  case 10:
+    console.log("Das ist keine gültige Schulnote.");
+    break;
+  default:
+    console.log("Die Zahl ist außerhalb der Vorgaben 1-10");
+}
 
 // - ====================== LEVEL 3_1 ======================
