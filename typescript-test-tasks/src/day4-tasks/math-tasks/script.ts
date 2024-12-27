@@ -22,3 +22,20 @@ const randomNum1_100 = Math.ceil(Math.random() * 100);
 console.log(randomNum, randomNum1_10, randomNum1_100);
 
 // - ============================ LEVEL 2_2 =========================
+const gameNumber = Math.ceil(Math.random() * 10);
+const inputNumber = Number(
+  window.prompt("Schätzen Sie eine Zahl zwischen 1 und 10.")
+);
+
+switch (true) {
+  case inputNumber === gameNumber:
+    console.log("Du hast gewonnen! Du hast die richtige Zahl geschätzt");
+    break;
+  case inputNumber !== gameNumber:
+    console.log(
+      `Du hast verloren. Die richtige Zahl wäre ${gameNumber} gewesen.`
+    );
+    break;
+  default:
+    console.log("Something went wrong, please try again");
+}
