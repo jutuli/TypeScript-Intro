@@ -15,4 +15,34 @@ if (pContainer) {
   <p>${date4}</p>`;
 }
 
-// - =========================
+// - ========================= LEVEL 2_1 =====================
+// Task 1
+const date = new Date();
+const day = date.getDate();
+const month = date.getMonth() + 1;
+const year = date.getFullYear();
+
+const dateFormatsHTML =
+  document.querySelector<HTMLDivElement>("#dateContainer");
+
+if (dateFormatsHTML) {
+  dateFormatsHTML.innerHTML = `
+<p>${day}-${month}-${year}</p>
+<p>${day}/${month}/${year}</p>`;
+}
+
+// Task 2
+const timeFormatsHTML =
+  document.querySelector<HTMLDivElement>("#timeContainer");
+
+if (timeFormatsHTML) {
+  timeFormatsHTML.innerHTML = `
+    <p>${date.toLocaleTimeString("de-DE", {
+      hour: "2-digit",
+      minute: "2-digit",
+    })} Uhr</p><p>${date.toLocaleTimeString("de-DE", {
+    hour: "2-digit",
+    minute: "2-digit",
+    timeZone: "UTC",
+  })} Uhr</p>`;
+}
