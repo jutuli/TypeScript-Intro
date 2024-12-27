@@ -92,3 +92,57 @@ switch (schoolGrade) {
 }
 
 // - ====================== LEVEL 3_1 ======================
+// Task 1
+const salesMonth = Math.ceil(Math.random() * 12);
+let salesQuarter: string | null;
+
+switch (salesMonth) {
+  case 1:
+  case 2:
+  case 3:
+    salesQuarter = "1. Quartal";
+    break;
+  case 4:
+  case 5:
+  case 6:
+    salesQuarter = "2. Quartal";
+    break;
+  case 7:
+  case 8:
+  case 9:
+    salesQuarter = "3. Quartal";
+    break;
+  case 10:
+  case 11:
+  case 12:
+    salesQuarter = "4. Quartal";
+    break;
+  default:
+    salesQuarter = null;
+    console.log("The sales month does not exist");
+}
+
+console.log(salesQuarter);
+
+// Task 2
+const totalSales = Math.floor(Math.random() * 9001 + 1000);
+let salesVolume: string | null;
+
+switch (true) {
+  case totalSales >= 1000 && totalSales <= 2500:
+    salesVolume = "schlecht";
+    break;
+  case totalSales > 2500 && totalSales <= 5000:
+    salesVolume = "mittelmäßig";
+    break;
+  case totalSales > 5000 && totalSales <= 7500:
+    salesVolume = "hoch";
+    break;
+  case totalSales > 7500 && totalSales <= 10000:
+    salesVolume = "unglaublich";
+    break;
+  default:
+    salesVolume = null;
+}
+
+console.log(`Im ${salesQuarter} war der Umsatz ${salesVolume}.`);
