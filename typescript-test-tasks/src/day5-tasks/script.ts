@@ -46,6 +46,21 @@ function showHero(heroName: string, heroPower: string, heroEnemy: string) {
 showHero("Blazing Star", "Transparency", "Snowman");
 
 // - ================ LEVEL 1_5 =================
+function multipyAndDivide(a: number, b: number) {
+  console.log(`Multiplikation von ${a} und ${b}:`, a * b);
+  if (b === 0) {
+    console.log("Division durch 0 ist nicht erlaubt.");
+  } else {
+    console.log(`Division von ${a} und ${b}:`, a / b);
+  }
+}
+
+multipyAndDivide(10, 2);
+multipyAndDivide(30, 20);
+multipyAndDivide(100, 100);
+multipyAndDivide(5, 0);
+multipyAndDivide(45, 173);
+multipyAndDivide(1, 1000);
 
 // - ================ LEVEL 1_6 =================
 
