@@ -74,6 +74,15 @@ if (x === y) {
 }
 
 // - ================ LEVEL 1_7 =================
+function mulitiplyByTwo(a: number) {
+  return a * 2;
+}
+
+console.log(mulitiplyByTwo(3));
+
+const multiplyByTwo2 = (a: number) => a * 2;
+
+console.log(multiplyByTwo2(2));
 
 // - ================ LEVEL 1_8 =================
 
