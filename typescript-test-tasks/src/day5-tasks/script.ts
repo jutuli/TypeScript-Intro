@@ -36,6 +36,14 @@ const showPersonInfo2 = (name: string, city: string, age: number) => {
 showPersonInfo2("Sarah", "Berlin", 27);
 
 // - ================ LEVEL 1_4 =================
+function showHero(heroName: string, heroPower: string, heroEnemy: string) {
+  let nameOutput = `Mein:e Lieblingsheld:in ist: ${heroName}`;
+  let powerOutput = `Er/sie hat die Fähigkeit: ${heroPower}`;
+  let enemyOutput = `Sein/ihr größte/r Gegner:in ist: ${heroEnemy}`;
+  console.log(nameOutput + ". " + powerOutput + ". " + enemyOutput);
+}
+
+showHero("Blazing Star", "Transparency", "Snowman");
 
 // - ================ LEVEL 1_5 =================
 
