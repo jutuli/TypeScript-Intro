@@ -1,5 +1,7 @@
 // - ================ LEVEL 1_1 =================
 
+import { getDate } from "date-fns";
+
 function intro1(): void {
   console.log("Hello Function");
 }
@@ -85,5 +87,24 @@ const multiplyByTwo2 = (a: number) => a * 2;
 console.log(multiplyByTwo2(2));
 
 // - ================ LEVEL 1_8 =================
+// TASK 1
+function calculateAge(birthYear: number) {
+  return new Date().getFullYear() - birthYear;
+}
+console.log(calculateAge(1995));
 
+const calculateAge2 = (birthYear: number) =>
+  new Date().getFullYear() - birthYear;
+console.log(calculateAge2(1995));
+
+// TASK 2
+function compareAges(ageA: number, ageB: number) {
+  const ageDifference = ageA - ageB;
+  return ageDifference;
+}
+
+console.log(compareAges(12, 7));
+
+const ageDifference2 = (ageA: number, ageB: number) => ageA - ageB;
+console.log(ageDifference2(12, 7));
 // - ================ LEVEL 1_9 =================
