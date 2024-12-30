@@ -1,7 +1,5 @@
 // - ================ LEVEL 1_1 =================
 
-import { getDate } from "date-fns";
-
 function intro1(): void {
   console.log("Hello Function");
 }
@@ -15,6 +13,7 @@ const intro2 = () => {
 intro2();
 
 // - ================ LEVEL 1_3 =================
+
 function showPersonInfo(name: string, city: string, age: number) {
   console.log(
     `Hallo, mein Name ist ${name}. Ich bin ${Math.floor(
@@ -36,6 +35,7 @@ const showPersonInfo2 = (name: string, city: string, age: number) => {
 showPersonInfo2("Sarah", "Berlin", 27);
 
 // - ================ LEVEL 1_4 =================
+
 function showHero(heroName: string, heroPower: string, heroEnemy: string) {
   let nameOutput = `Mein:e Lieblingsheld:in ist: ${heroName}`;
   let powerOutput = `Er/sie hat die Fähigkeit: ${heroPower}`;
@@ -46,6 +46,7 @@ function showHero(heroName: string, heroPower: string, heroEnemy: string) {
 showHero("Blazing Star", "Transparency", "Snowman");
 
 // - ================ LEVEL 1_5 =================
+
 function multipyAndDivide(a: number, b: number) {
   console.log(`Multiplikation von ${a} und ${b}:`, a * b);
   if (b === 0) {
@@ -63,6 +64,7 @@ multipyAndDivide(45, 173);
 multipyAndDivide(1, 1000);
 
 // - ================ LEVEL 1_6 =================
+
 function returnOne() {
   return 1;
 }
@@ -76,6 +78,7 @@ if (x === y) {
 }
 
 // - ================ LEVEL 1_7 =================
+
 function mulitiplyByTwo(a: number) {
   return a * 2;
 }
@@ -87,6 +90,7 @@ const multiplyByTwo2 = (a: number) => a * 2;
 console.log(multiplyByTwo2(2));
 
 // - ================ LEVEL 1_8 =================
+
 // TASK 1
 function calculateAge(birthYear: number) {
   return new Date().getFullYear() - birthYear;
@@ -107,4 +111,29 @@ console.log(compareAges(12, 7));
 
 const ageDifference2 = (ageA: number, ageB: number) => ageA - ageB;
 console.log(ageDifference2(12, 7));
+
 // - ================ LEVEL 1_9 =================
+
+function selfIntroductionByUser(
+  firstName: string,
+  lastName: string,
+  placeOfBirth: string,
+  age: number,
+  placeOfResidence: string
+) {
+  console.log(
+    "Mein Name ist " +
+      firstName +
+      " " +
+      lastName +
+      ". Ich bin in " +
+      placeOfBirth +
+      " geboren. Ich lerne bei SuperCode. Ich bin " +
+      age +
+      " Jahre alt. Ich wohne in " +
+      placeOfResidence +
+      "."
+  );
+}
+
+selfIntroductionByUser("Aurora", "Stardust", "New York", 20, "Celestia");
