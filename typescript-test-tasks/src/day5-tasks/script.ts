@@ -1,7 +1,5 @@
 // - ================ LEVEL 1_1 =================
 
-import { isFirstDayOfMonth } from "date-fns";
-
 function intro1(): void {
   console.log("Hello Function");
 }
@@ -63,6 +61,17 @@ multipyAndDivide(45, 173);
 multipyAndDivide(1, 1000);
 
 // - ================ LEVEL 1_6 =================
+function returnOne() {
+  return 1;
+}
+
+let x = 1;
+let y = returnOne();
+
+if (x === y) {
+  console.log("Wird das gedruckt?");
+} else {
+}
 
 // - ================ LEVEL 1_7 =================
 
