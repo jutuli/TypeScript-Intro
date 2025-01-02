@@ -113,4 +113,32 @@ console.log(numbers);
 numbers.shift();
 console.log(numbers);
 
-// - ==================== LEVEL 1_14 ====================
+// - ==================== LEVEL 1_14 - Arrays kopieren ====================
+
+const oldHollywoodActors: string[] = [
+  "Marlon Brando",
+  "Audrey Hepburn",
+  "Elizabeth Taylor",
+  "Cary Grant",
+  "Paul Newman",
+  "Doris Day",
+];
+
+let actorsReference = oldHollywoodActors;
+actorsReference.push("Marylin Monroe");
+console.log(actorsReference);
+console.log(oldHollywoodActors);
+
+let actorsReferenceViaConcat = oldHollywoodActors.concat();
+let actorsReferenceViaSlice = oldHollywoodActors.slice();
+let actorsReferenceViaSpread = [...oldHollywoodActors];
+
+actorsReferenceViaConcat.pop();
+actorsReferenceViaSlice.unshift("Rita Hayworth");
+actorsReferenceViaSpread.shift();
+
+console.log(oldHollywoodActors);
+console.log(actorsReference);
+console.log(actorsReferenceViaConcat);
+console.log(actorsReferenceViaSlice);
+console.log(actorsReferenceViaSpread);
