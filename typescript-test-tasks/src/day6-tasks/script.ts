@@ -18,6 +18,9 @@ console.log(favoritePeople[1]);
 console.log(favoritePeople[2]);
 
 // - ==================== LEVEL 1_3 ====================
+console.log(bucketList.length);
+console.log(luckyNumbers.length);
+console.log(favoritePeople.length);
 
 // - ==================== LEVEL 1_4 ====================
 
