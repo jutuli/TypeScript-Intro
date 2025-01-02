@@ -23,7 +23,14 @@ console.log(luckyNumbers.length);
 console.log(favoritePeople.length);
 
 // - ==================== LEVEL 1_4 ====================
+bucketList.push("Shanghai", "Istanbul");
+console.log(bucketList);
 
+luckyNumbers.push(5, 55, 99);
+console.log(luckyNumbers);
+
+favoritePeople.push("James", "Harry");
+console.log(favoritePeople);
 // - ==================== LEVEL 1_5 ====================
 
 // - ==================== LEVEL 1_6 ====================
