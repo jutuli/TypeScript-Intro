@@ -44,6 +44,9 @@ console.log("Entfernt: " + lastFavoritePerson);
 console.log(favoritePeople);
 
 // - ==================== LEVEL 1_6 ====================
+const firstFavoritePerson = favoritePeople.shift();
+console.log("Entfernt: " + firstFavoritePerson);
+console.log(favoritePeople);
 
 // - ==================== LEVEL 1_7 ====================
 
