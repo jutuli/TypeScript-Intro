@@ -66,6 +66,10 @@ console.log(favoritePeople);
 // Es ist möglich einen oder mehrere Werte mit unshift() am Anfang eines Arrays einzufügen.
 // Die anderen Werte werden mit ihrem Index um Anzahl der neu hinzugefügten Werte erhöht.
 
+bucketList.unshift("London", "Paris");
+console.log(bucketList);
+console.log(bucketList.length);
+
 // - ==================== LEVEL 1_8 ====================
 
 // - ==================== LEVEL 1_9 ====================
