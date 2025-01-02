@@ -1,7 +1,7 @@
 // - ==================== LEVEL 1_1 ====================
-const bucketList = ["Buenos Aires", "Reykjavik", "Amsterdam"];
-const luckyNumbers = [21, 77, 111];
-const favoritePeople = ["Suzy", "Lucy", "Macy"];
+const bucketList: string[] = ["Buenos Aires", "Reykjavik", "Amsterdam"];
+const luckyNumbers: number[] = [21, 77, 111];
+const favoritePeople: string[] = ["Suzy", "Lucy", "Macy"];
 console.log(bucketList);
 console.log(luckyNumbers);
 console.log(favoritePeople);
@@ -75,7 +75,7 @@ console.log(bucketList.length);
 // Hierbei ist zu beachten, dass slice() einen Startindex benötigt, optional auch einen Endindex.
 // Der Endindex gibt an, dass der Ausschnitt bis zu, aber nicht einschließlich, diesem Index reicht.
 
-const lieblingsreiseziele = [
+const lieblingsreiseziele: string[] = [
   "Buenos Aires",
   "Santiago de Chile",
   "Rio de Janeiro",
