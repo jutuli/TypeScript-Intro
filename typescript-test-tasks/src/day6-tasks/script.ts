@@ -1,4 +1,4 @@
-// - ==================== LEVEL 1_1 ====================
+// - ==================== LEVEL 1_1 - Arrays definieren ====================
 const bucketList: string[] = ["Buenos Aires", "Reykjavik", "Amsterdam"];
 const luckyNumbers: number[] = [21, 77, 111];
 const favoritePeople: string[] = ["Suzy", "Lucy", "Macy"];
@@ -6,7 +6,7 @@ console.log(bucketList);
 console.log(luckyNumbers);
 console.log(favoritePeople);
 
-// - ==================== LEVEL 1_2 ====================
+// - ==================== LEVEL 1_2 - Zugriff auf Array-Werte  ====================
 // Denke daran, dass Arrays 0-indiziert sind, d.h. sie fangen bei 0 an zu zählen.
 
 console.log(bucketList[0]);
@@ -19,14 +19,14 @@ console.log(favoritePeople[0]);
 console.log(favoritePeople[1]);
 console.log(favoritePeople[2]);
 
-// - ==================== LEVEL 1_3 ====================
+// - ==================== LEVEL 1_3 - Length ====================
 // Um die Anzahl der Werte in einem Array zu ermitteln, kannst du length verwenden.
 
 console.log(bucketList.length);
 console.log(luckyNumbers.length);
 console.log(favoritePeople.length);
 
-// - ==================== LEVEL 1_4 ====================
+// - ==================== LEVEL 1_4 - Push() ====================
 // Mit push() kannst du einen oder mehrere Werte gleichzeitig an das Ende eines Arrays hinzufügen.
 
 bucketList.push("Shanghai", "Istanbul");
@@ -37,7 +37,7 @@ console.log(luckyNumbers);
 
 favoritePeople.push("James", "Harry");
 console.log(favoritePeople);
-// - ==================== LEVEL 1_5 ====================
+// - ==================== LEVEL 1_5 - Pop() ====================
 // Bei pop() wird der letzte Wert von einem Array entfernt und der entfernte Wert wird zurückgegeben.
 // .pop() entfernt jeweils NUR das letzte Element (keine Argumente/Zahlen in () möglich)
 
@@ -51,8 +51,8 @@ const lastFavoritePerson = favoritePeople.pop();
 console.log("Entfernt: " + lastFavoritePerson);
 console.log(favoritePeople);
 
-// - ==================== LEVEL 1_6 ====================
-// Die Array-Methode **shift()** ist pop() sehr ähnlich.
+// - ==================== LEVEL 1_6 - shift() ====================
+// Die Array-Methode shift() ist pop() sehr ähnlich.
 // Denn shift() entfernt auch einen Wert aus einem Array, dieses Mal allerdings den ersten Wert.
 // Hierbei wird der erste Wert entfernt und die anderen Werte rücken mit ihrem Index einen nach vorne.
 
@@ -60,7 +60,7 @@ const firstFavoritePerson = favoritePeople.shift();
 console.log("Entfernt: " + firstFavoritePerson);
 console.log(favoritePeople);
 
-// - ==================== LEVEL 1_7 ====================
+// - ==================== LEVEL 1_7 - unshift() ====================
 // Die Array-Methode unshift() ist push() sehr ähnlich.
 // Denn unshift() fügt auch einen Wert zu einem Array hinzu, dieses mal allerdings an erster Stelle.
 // Es ist möglich einen oder mehrere Werte mit unshift() am Anfang eines Arrays einzufügen.
@@ -70,7 +70,7 @@ bucketList.unshift("London", "Paris");
 console.log(bucketList);
 console.log(bucketList.length);
 
-// - ==================== LEVEL 1_8 ====================
+// - ==================== LEVEL 1_8 - slice () ====================
 // Mit slice() kann man Werte aus einem Array schneiden und bekommt ein neues Array zurück.
 // Hierbei ist zu beachten, dass slice() einen Startindex benötigt, optional auch einen Endindex.
 // Der Endindex gibt an, dass der Ausschnitt bis zu, aber nicht einschließlich, diesem Index reicht.
