@@ -32,6 +32,16 @@ console.log(luckyNumbers);
 favoritePeople.push("James", "Harry");
 console.log(favoritePeople);
 // - ==================== LEVEL 1_5 ====================
+// .pop() entfernt jeweils NUR das letzte Element (keine Argumente/Zahlen in () möglich)
+console.log("Entfernt: " + bucketList.pop());
+console.log(bucketList);
+
+console.log("Entfernt: " + luckyNumbers.pop());
+console.log(luckyNumbers);
+
+const lastFavoritePerson = favoritePeople.pop();
+console.log("Entfernt: " + lastFavoritePerson);
+console.log(favoritePeople);
 
 // - ==================== LEVEL 1_6 ====================
 
