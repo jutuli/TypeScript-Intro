@@ -71,6 +71,24 @@ console.log(bucketList);
 console.log(bucketList.length);
 
 // - ==================== LEVEL 1_8 ====================
+// Mit slice() kann man Werte aus einem Array schneiden und bekommt ein neues Array zurück.
+// Hierbei ist zu beachten, dass slice() einen Startindex benötigt, optional auch einen Endindex.
+// Der Endindex gibt an, dass der Ausschnitt bis zu, aber nicht einschließlich, diesem Index reicht.
+
+const lieblingsreiseziele = [
+  "Buenos Aires",
+  "Santiago de Chile",
+  "Rio de Janeiro",
+  "Miami",
+  "Austin",
+  "Los Angeles",
+];
+
+console.log(lieblingsreiseziele);
+
+lieblingsreiseziele.slice(2, 4);
+console.log(lieblingsreiseziele);
+console.log(lieblingsreiseziele.slice(2, 4));
 
 // - ==================== LEVEL 1_9 ====================
 
