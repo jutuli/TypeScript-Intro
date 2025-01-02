@@ -90,6 +90,27 @@ lieblingsreiseziele.slice(2, 4);
 console.log(lieblingsreiseziele);
 console.log(lieblingsreiseziele.slice(2, 4));
 
-// - ==================== LEVEL 1_9 ====================
+// - ==================== LEVEL 1_9 - Unterschied push-pop & shift-unshift ====================
+
+const numbers: number[] = [23, 54, 75];
+console.log(numbers);
+
+numbers.push(5);
+console.log(numbers);
+
+numbers.unshift(5);
+console.log(numbers);
+
+numbers.pop();
+console.log(numbers);
+
+numbers.pop();
+console.log(numbers);
+
+numbers.shift();
+console.log(numbers);
+
+numbers.shift();
+console.log(numbers);
 
 // - ==================== LEVEL 1_14 ====================
