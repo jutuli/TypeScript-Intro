@@ -53,3 +53,22 @@ const divisibleNumbers: number[] = checkNumber.map(function (num) {
 console.log(divisibleNumbers);
 
 // - =================== LEVEL 1_6 ==================
+// Erstelle ein neues Array von Dateinamen auf Basis des gegebenen Arrays (siehe Code-Snippet).
+// Entferne die Dateiendungen (z.B. "image.jpg" => "image").
+// Falls keine Dateiendung vorhanden ist, soll statt dem Dateinamen der Wert "invalid" gespeichert werden (z.B. "dog" => "invalid").
+// Die Dateinamen sollen in Kleinbuchstaben gespeichert werden.
+
+const album: string[] = [
+  "holidays.jpg",
+  "Restaurant.jpg",
+  "desktop",
+  "rooms.GIF",
+  "DOGATBEACH.jpg",
+];
+
+const fileNames: Array<string> = album.map((image) =>
+  image.includes(".")
+    ? image.split(".")[0].toLowerCase()
+    : image.replace(image, "invalid")
+);
+console.log(fileNames);
