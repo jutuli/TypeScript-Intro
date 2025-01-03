@@ -44,7 +44,7 @@ function searchArtWork(artworkName: string) {
       } im Jahre ${artDateEntry.split(" - ")[1]} gemalt.`
     );
   } else {
-    console.log(`Artwork ${artworkName} not found`);
+    console.log(`Artwork ${artworkName} not found.`);
   }
 }
 
