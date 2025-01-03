@@ -21,6 +21,14 @@ const iLikeDrinks = drinks.map((drink) => `I like ${drink}!`);
 console.log(iLikeDrinks);
 
 // - =================== LEVEL 1_4 ==================
+// Schreibe Code, der mit Hilfe von map() ein Array aus Temperaturen von Fahrenheit in Celsius umwandelt.
+
+const fahrenheit: number[] = [0, 32, 45, 50, 75, 80, 99, 120];
+
+const celsius: number[] = fahrenheit.map((temperature) =>
+  parseFloat(((temperature - 32) / 1.8).toFixed(2))
+);
+console.log(celsius);
 
 // - =================== LEVEL 1_5 ==================
 
