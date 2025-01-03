@@ -15,5 +15,5 @@ function printoddNumbers(num: number) {
 }
 const evenNumbers = zahlen.filter(printEvenNumbers);
 const oddNumbers = zahlen.filter(printoddNumbers);
-console.log(evenNumbers);
-console.log(oddNumbers);
+console.log("Even Numbers: " + evenNumbers);
+console.log("Odd Numbers: " + oddNumbers);
