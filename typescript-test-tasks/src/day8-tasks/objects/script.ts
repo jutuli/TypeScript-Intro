@@ -82,6 +82,39 @@ unsereHaustiere.push(hamster);
 console.log(unsereHaustiere);
 
 // - ===================== LEVEL 1_5 ======================
+//Verwende den vorgegebenen Code: den Typ Lager und ein Objekt vom Typ Lager
+//Greife auf die Eigenschaften des Objekts zu und gib folgende Werte in der Konsole aus: Geheimnisse, Cola, Hefter
+
+type Lager = {
+  schreibtisch: {
+    schublade: string;
+  };
+  schrank: {
+    "Obere Schublade": {
+      Ordner1: string;
+      Ordner2: string;
+    };
+    "Untere Schublade": string;
+  };
+};
+
+const unserLager: Lager = {
+  schreibtisch: {
+    schublade: "Hefter",
+  },
+  schrank: {
+    "Obere Schublade": {
+      Ordner1: "Dokumente",
+      Ordner2: "Geheimnisse",
+    },
+    "Untere Schublade": "Cola",
+  },
+};
+
+//Greife auf die Eigenschaften des Objekts zu und gib folgende Werte in der Konsole aus: Geheimnisse, Cola, Hefter
+console.log(unserLager.schrank["Untere Schublade"]);
+console.log(unserLager.schrank["Obere Schublade"].Ordner2);
+console.log(unserLager.schreibtisch.schublade);
 
 // - ===================== LEVEL 1_6 ======================
 
