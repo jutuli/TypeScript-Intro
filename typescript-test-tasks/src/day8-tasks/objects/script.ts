@@ -18,14 +18,18 @@ const greenApple: Apple = { color: "green", size: "small", isSweet: false };
 const yellowApple: Apple = { color: "yellow", size: "big", isSweet: false };
 const apples: Apple[] = [redApple, greenApple, yellowApple];
 
+// Nutze forEach, um nur die Größen aller Äpfel in der Konsole auszugeben
 apples.forEach((apple) => console.log(apple.size));
 
+// Nutze forEach, um die Farbe jedes Apfels auf der Konsole auszugeben
 apples.forEach((apple) => {
   console.log(apple.color);
 });
 
+// Verwende den Befehl length, um die Anzahl der Äpfel auszugeben
 console.log(apples.length);
 
+// Erstelle selbst ein Objekt pinkApple vom Typ Apple und pushe es in das apples Array
 const pinkApple: Apple = {
   color: "pink",
   size: "medium",
@@ -33,9 +37,49 @@ const pinkApple: Apple = {
 };
 
 apples.push(pinkApple);
+
 console.log(apples);
 
 // - ===================== LEVEL 1_4 ======================
+// Greife auf die Werte "Nala" und "Droopy" in diesem Array von Objekten zu und lasse sie dir auf der Konsole ausgeben.
+// Lasse dir einmal alle Hundenamen anzeigen.
+// Ändere folgende Werte: Droopy in Snoppy & Dinky in Pinky
+// Erstelle ein weiteres Objekt vom Typ Pet, z. B. Hamster
+// Füge das Objekt im Array hinzu
+
+type Pet = {
+  tiertyp: string;
+  namen: string[];
+};
+
+const unsereHaustiere: Pet[] = [
+  {
+    tiertyp: "Katze",
+    namen: ["Gipsy", "Nala", "Dinky"],
+  },
+  {
+    tiertyp: "Hunde",
+    namen: ["Knöpfchen", "Pinselchen", "Droopy"],
+  },
+];
+
+// Lasse dir einmal alle Hundenamen anzeigen.
+console.log(unsereHaustiere[1].namen);
+
+// Ändere folgende Werte: Droopy in Snoppy & Dinky in Pinky
+unsereHaustiere[0].namen[2] = "Pinky";
+console.log(unsereHaustiere[0].namen);
+
+unsereHaustiere[1].namen[2] = "Snoopy";
+console.log(unsereHaustiere[1].namen);
+
+const hamster: Pet = {
+  tiertyp: "Hamster",
+  namen: ["Itsy", "Bitsy", "Spider"],
+};
+
+unsereHaustiere.push(hamster);
+console.log(unsereHaustiere);
 
 // - ===================== LEVEL 1_5 ======================
 
