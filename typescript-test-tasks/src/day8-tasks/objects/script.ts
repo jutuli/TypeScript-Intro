@@ -183,4 +183,16 @@ console.log(meineTopVier[3].formate[2]);
 // aus dem Objekt  Metallica das Wort: "Ride"
 console.log(meineTopVier[3].title.slice(17, 21));
 
+// Lege ein neues Objekt vom Typ Musik an und füge es zum Array hinzu.
+const meineZusatzmusik: Musik = {
+  kunstler: "DJ Bobo",
+  title: "Everybody",
+  release_jahr: 1993,
+  formate: ["LP", "CD", "MC", "Download"],
+  gold: false,
+};
+
+meineTopVier.push(meineZusatzmusik);
+console.log(meineTopVier);
+
 // - ===================== LEVEL 2_2 ======================
