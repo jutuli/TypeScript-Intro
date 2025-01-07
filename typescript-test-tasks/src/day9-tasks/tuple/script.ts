@@ -25,6 +25,8 @@ starWarsCast.forEach(([role, actor]) => {
 // Ein Tuple, das einen Mitarbeitenden repräsentiert besteht aus Nummer (number), Name (string), Abteilung (string) und Jahresgehalt (number)
 
 type employeeTuple = [
+  // ? Labels wie num, name, department, salary verbessern die Lesbarkeit
+  // ? eher nur bei kleinen, festen und gut zu verstehenden Datenstrukturen anwenden
   num: number,
   name: string,
   department: string,
