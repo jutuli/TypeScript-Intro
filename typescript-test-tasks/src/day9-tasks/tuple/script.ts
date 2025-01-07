@@ -20,3 +20,26 @@ starWarsCast.forEach(([role, actor]) => {
 });
 
 //- ==================== LEVEL 2_1 =====================
+// Wir wollen eine Mitarbeitendenverwaltung auf Basis eines Arrays erstellen
+// Dabei wollen wir im Array den Datentyp Tuple verwenden
+// Ein Tuple, das einen Mitarbeitenden repräsentiert besteht aus Nummer (number), Name (string), Abteilung (string) und Jahresgehalt (number)
+
+type employeeTuple = [
+  num: number,
+  name: string,
+  department: string,
+  salary: number
+];
+
+// Erstelle jetzt ein Array von diesen Tupeln, das mindestens 5 Mitarbeitende mit beliebigen Daten enthält
+
+const employeeOverview: employeeTuple[] = [
+  [1, "John Doe", "Marketing", 55000],
+  [2, "John Doe", "Sales", 92800],
+  [3, "John Doe", "Human Resources", 74000],
+  [4, "John Doe", "Finance", 80500],
+  [5, "John Doe", "Marketing", 42000],
+];
+
+// Lass dir alle Mitarbeitenden mit ihren Daten auf der Konsole ausgeben
+console.log(employeeOverview);
