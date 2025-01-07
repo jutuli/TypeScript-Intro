@@ -35,10 +35,10 @@ type employeeTuple = [
 
 const employeeOverview: employeeTuple[] = [
   [1, "John Doe", "Marketing", 55000],
-  [2, "John Doe", "Sales", 92800],
-  [3, "John Doe", "Human Resources", 74000],
-  [4, "John Doe", "Finance", 80500],
-  [5, "John Doe", "Marketing", 42000],
+  [2, "Jane Doe", "Sales", 92800],
+  [3, "Sarah Morris", "Human Resources", 74000],
+  [4, "Mike Morris", "Finance", 80500],
+  [5, "Anna Fromm", "Marketing", 42000],
 ];
 
 // Lass dir alle Mitarbeitenden mit ihren Daten auf der Konsole ausgeben
