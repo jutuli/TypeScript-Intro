@@ -110,3 +110,14 @@ console.log(favoriteBands.get("The Beatles"));
 // Die Values zu dem Key wurden überschrieben/ersetzt mit den neuen Werten
 
 //- ==================== LEVEL 3_1 =====================
+// Lass dir alle Mitglieder auf der Konsole ausgeben, deren Name länger als 12 Zeichen (inkl. Leerzeichen) ist
+//Beispiel für eine Zeile in der Ausgabe:
+// Band: Metallica, Member: Robert Trujillo, Length: 15
+
+favoriteBands.forEach(([member], bandName) => {
+  if (member.length >= 12) {
+    console.log(
+      `Band: ${bandName} , Member: ${member}, Length: ${member.length}`
+    );
+  }
+});
