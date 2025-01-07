@@ -89,4 +89,24 @@ console.log(favoriteBands.get("Metallica"));
 console.log(favoriteBands.get("Metallica")?.at(-1));
 
 //- ==================== LEVEL 2_1 =====================
+//Prüfe, ob die Band “Metallica” in der Map enthalten ist
+
+console.log(favoriteBands.has("Metallica"));
+
+//Lege einen doppelten Eintrag an, also einen Bandnamen (=Key), den du bereits verwendet hast mit anderen Mitgliedern
+
+favoriteBands.set("The Beatles", [
+  "Johnny Lenny",
+  "Pauly Meccy",
+  "Georgie Harry",
+  "Ringy Starry",
+]);
+
+//Hole dir den Eintrag mit get aus der Map aus lasse ihn auf der Konsole ausgeben
+
+console.log(favoriteBands.get("The Beatles"));
+
+//Welchen Eintrag bekommst du zurück? Schreibe es als Kommentar in deinen Code
+// Die Values zu dem Key wurden überschrieben/ersetzt mit den neuen Werten
+
 //- ==================== LEVEL 3_1 =====================
