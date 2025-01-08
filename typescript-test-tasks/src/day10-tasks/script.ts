@@ -88,6 +88,49 @@ function createImageNames() {
 console.log(createImageNames());
 
 // - ======================= LEVEL 2_2 =========================
+// In deinem HTML ist ein Inputfeld zu sehen, in das User:innen eine Zahl eingeben können. So wird die Anzahl des Buchstabens "o" festgelegt.
+// Schreibe eine Funktion, mit der du am Ende in deinem HTML das Wort "Loop" ausgibst, mit der eingegebenen Anzahl an Os aus dem Input-Feld.
+
+// Neues Input-Element anlegen
+let newInputElement = document.createElement("input");
+newInputElement.type = "number";
+// Neuen Button-Element anlegen
+let newButtonElement = document.createElement("button");
+newButtonElement.textContent = "Loop me";
+// Neues Result-Element anlegen & stylen
+let resultElement = document.createElement("p");
+resultElement.style.color = "teal";
+
+// Hinzufügen von Input-Element + Button-Element + Result-Element in HTML
+parentElement?.appendChild(newInputElement);
+parentElement?.appendChild(newButtonElement);
+parentElement?.appendChild(resultElement);
+
+// Create Loop Word
+let loopWord: string = "";
+
+// EventListener for Button Click
+newButtonElement.addEventListener("click", () => {
+  createLoopWord();
+  resultElement.textContent = loopWord;
+});
+
+// Function to Create Loop Word
+function createLoopWord() {
+  let input: number = parseInt(newInputElement.value);
+  if (isNaN(input) || input <= 0) {
+    alert("Please insert an integer number");
+    return;
+  } else {
+    let oString: string = "";
+    for (let i = 0; i < input; i++) {
+      oString += "o";
+    }
+    loopWord = `L${oString}p`;
+  }
+  return loopWord;
+}
+
 // - ======================= LEVEL 3_1 =========================
 // - ======================= LEVEL 3_2 =========================
 // - ======================= LEVEL 3_3 =========================
