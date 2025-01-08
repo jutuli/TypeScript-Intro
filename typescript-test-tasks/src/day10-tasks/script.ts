@@ -163,4 +163,30 @@ splitInBlocksOf100(text);
 console.log(splitInBlocksOf100(text));
 
 // - ======================= LEVEL 3_2 =========================
+// Du hast ein Array aus Zahlen und möchtest herausfinden, durch welche Zahlen sie (außer durch eins und sich selbst) teilbar sind.
+
+const numbers: number[] = [5, 22, 15, 100, 55];
+const divisors = numbers.map((num) => {
+  const divisorArray: number[] = [];
+  for (let j = 2; j < num; j++) {
+    if (num % j === 0 && num !== j) {
+      divisorArray.push(j);
+    }
+  }
+  return divisorArray;
+});
+
+// Schreibe das Ergebnis in dein HTML.
+divisors.forEach((element, i) => {
+  let divisionResultParagraph = document.createElement("p");
+  if (element.length < 1) {
+    divisionResultParagraph.textContent = `${numbers[i]} is only divisible by 1 and itself.`;
+  } else {
+    divisionResultParagraph.textContent = `${
+      numbers[i]
+    } is divisible by 1, itself and ${element.join(", ")}`;
+  }
+  parentElement?.appendChild(divisionResultParagraph);
+});
+
 // - ======================= LEVEL 3_3 =========================
