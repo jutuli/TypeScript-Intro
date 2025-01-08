@@ -37,6 +37,19 @@ while (counter < 10) {
 }
 
 // - ======================= LEVEL 1_7 =========================
+// Erstelle einen Loop mit do...while.
+// Es sollen die Nummern von 1 bis 5 (wie im Screenshot zu sehen) im HTML-Dokument ausgeben werden.
+
+let num = 1;
+let parentElement = document.querySelector("main");
+
+do {
+  let newParagraph = document.createElement("p");
+  newParagraph.textContent = `The number is ${num}`;
+  parentElement?.appendChild(newParagraph);
+  num++;
+} while (num <= 5);
+
 // - ======================= LEVEL 1_8 =========================
 // - ======================= LEVEL 2_1 =========================
 // - ======================= LEVEL 2_2 =========================
