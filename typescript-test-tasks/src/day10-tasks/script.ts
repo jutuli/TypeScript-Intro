@@ -64,6 +64,29 @@ do {
 } while (evenNum <= 20);
 
 // - ======================= LEVEL 2_1 =========================
+
+// Nehmen wir an, wir wollen automatisiert 100 Dateinamen für Bilder in unserem Ordner erstellen. Wir erstellen dazu ein Array mit standardisierten Dateinamen – wie in der Ergebnisvorschau.
+// Deklariere dafür die Function createImageNames.
+// Deklariere im Funktionskörper die Variable returnArray als leeres Array.
+// Schreibe eine for-Schleife.
+// Du kannst Conditionals Statements (if, else) nutzen, wenn du den Dateinamen zusammenbaust, um zu ermittelt wie viel Nullen vor der Zahl stehen müssen. Alternativ kannst du die String-Methode padStart() einsetzen.
+// Nutze push() um den jeweiligen Dateinamen ins Array zu schreiben
+// Gib das Array mit return aus der Funktion zurück
+// Lasse dir das Ergebnis auf der Konsole ausgeben
+
+function createImageNames() {
+  let returnArray: string[] = [];
+  for (let i = 1; i <= 100; i++) {
+    let imageNum: number = i;
+    let imageNumWithPadding: string = imageNum.toString().padStart(3, "0");
+    let imageName = `image_${imageNumWithPadding}.jpg`;
+    returnArray.push(imageName);
+  }
+  return returnArray;
+}
+
+console.log(createImageNames());
+
 // - ======================= LEVEL 2_2 =========================
 // - ======================= LEVEL 3_1 =========================
 // - ======================= LEVEL 3_2 =========================
