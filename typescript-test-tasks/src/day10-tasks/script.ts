@@ -51,6 +51,18 @@ do {
 } while (num <= 5);
 
 // - ======================= LEVEL 1_8 =========================
+// Erstelle einen Loop mit do...while.
+// Es sollen alle geraden Zahlen bis 20 im HTML-Dokument ausgegeben werden.
+
+let evenNum = 2;
+
+do {
+  let newParagraph = document.createElement("p");
+  newParagraph.textContent = `The even number is ${evenNum}`;
+  parentElement?.appendChild(newParagraph);
+  evenNum += 2;
+} while (evenNum <= 20);
+
 // - ======================= LEVEL 2_1 =========================
 // - ======================= LEVEL 2_2 =========================
 // - ======================= LEVEL 3_1 =========================
