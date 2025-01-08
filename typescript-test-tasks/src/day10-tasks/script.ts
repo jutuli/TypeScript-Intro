@@ -90,6 +90,9 @@ console.log(createImageNames());
 // - ======================= LEVEL 2_2 =========================
 // In deinem HTML ist ein Inputfeld zu sehen, in das User:innen eine Zahl eingeben können. So wird die Anzahl des Buchstabens "o" festgelegt.
 // Schreibe eine Funktion, mit der du am Ende in deinem HTML das Wort "Loop" ausgibst, mit der eingegebenen Anzahl an Os aus dem Input-Feld.
+//- + LEVEL 3_3:
+// Wenn die Eingabe gerade ist (z. B. 2, 4, 6, ...), soll, wie gehabt, die eingegebene Anzahl an Os im Wort "L..p" eingefügt werden -> Zum Beispiel: Bei der Eingabe von 4 wird "Loooop" ausgegeben.
+// Wenn die Eingabe ungerade ist (z. B. 1, 3, 5, ...), sollten sich abwechselnd "o" und "0" in das Wort "L..p" einfügen, beginnend mit "o". Zum Beispiel: Bei der Eingabe von 5 wird "Lo0o0op" ausgegeben.
 
 // Neues Input-Element anlegen
 let newInputElement = document.createElement("input");
@@ -124,7 +127,12 @@ function createLoopWord() {
   } else {
     let oString: string = "";
     for (let i = 0; i < input; i++) {
-      oString += "o";
+      // Level 3_3 Add On mit variabler Groß-/Kleinschreibweise abhängig von Input-Zahl
+      if (input % 2 === 0) {
+        oString += "o";
+      } else {
+        i % 2 === 0 ? (oString += "o") : (oString += "O");
+      }
     }
     loopWord = `L${oString}p`;
   }
@@ -190,3 +198,4 @@ divisors.forEach((element, i) => {
 });
 
 // - ======================= LEVEL 3_3 =========================
+//? siehe Add Ons in Task Level 2_2
