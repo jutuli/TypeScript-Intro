@@ -130,3 +130,62 @@ console.log(calcFactorial(5));
 console.log(calcFactorial(6));
 
 // - ======================= LEVEL 3_6 =========================
+//Durchschnitt  <  50: "Ungenügend"
+//50 <=Durchschnitt  <  60: "Mangelhaft"
+//60 <= Durchschnitt < 70: "Ausreichend"
+//70 <= Durchschnitt < 80: "Befriedigend"
+//80 <= Durchschnitt < 90: "Gut"
+//90 <= Durchschnitt: "Sehr gut"
+
+type Grade = {
+  min: number;
+  max: number;
+  grade: string;
+};
+
+const grades: Grade[] = [
+  { min: 0, max: 49, grade: "Ungenügend" },
+  { min: 50, max: 59, grade: "Mangelhaft" },
+  { min: 60, max: 69, grade: "Ausreichend" },
+  { min: 70, max: 79, grade: "Befriedigend" },
+  { min: 80, max: 89, grade: "Gut" },
+  { min: 90, max: 100, grade: "Sehr gut" },
+];
+
+//Schreibe eine Funktion, die den Durchschnitt von Punkten einer Klassenarbeit aus einem Array berechnet und eine Bewertung ausgibt
+//Die Funktion hat demnach einen Parameter vom typ number[]
+// Die Punkte pro Klassenarbeit und damit die Werte im Array können jeweils zwischen 0 bis  100 liegen
+//Anhand des Punktedurchschnitts soll eine Bewertung ausgegeben werden.
+function getTestGrade(results: number[]): string {
+  let totalScore: number = 0;
+  for (let i = 0; i < results.length; i++) {
+    totalScore += results[i];
+  }
+  //Berechne den Punktedurchschnitt
+  let averageScore = parseFloat((totalScore / results.length).toFixed(2));
+
+  // Übersetzung des averageScores in eine Note
+
+  const testGrade = grades.find(
+    (grade) => averageScore >= grade.min && averageScore <= grade.max
+  );
+
+  return testGrade
+    ? testGrade.grade
+    : "Der Durchschnittswert liegt außerhalb des Bereichs 0-100. Bitte prüfe deine Eingabe.";
+}
+
+//Teste die Funktion mit verschiedenen Arrays
+const results = [44, 11, 70, 80, 52, 88, 94, 3, 25, 46];
+console.log("Deine Note ist:", getTestGrade(results));
+const results1 = [65, 74, 73, 71, 90, 20, 12, 87, 34, 76, 89];
+console.log("Deine Note ist:", getTestGrade(results1));
+
+const results2 = [90, 92, 88, 95, 93, 78, 99, 93, 91];
+console.log("Deine Note ist:", getTestGrade(results2));
+
+const results3 = [4, 5, 4, 6, 8, 20, 4, 8, 2];
+console.log("Deine Note ist:", getTestGrade(results3));
+
+const results4 = [100, 300, 400, 200, 440];
+console.log("Deine Note ist:", getTestGrade(results4));
