@@ -108,4 +108,25 @@ buttonElement.addEventListener("click", () => {
 });
 
 // - ======================= LEVEL 3_5 =========================
+// Schreibe eine Funktion, die die Fakultät (engl. Factorial) einer übergegebenen Zahl vom Typ number berechnet und das Ergebnis der Fakultätsberechnung zurückgibt.
+// Verwende eine Schleife, um die Multiplikation der Zahlen von 1 bis n durchzuführen.
+// Wenn 0 und 1 als Parameter übergeben werden, soll direkt das Ergebnis 1 zurückgegeben werden
+// Logik:“Die Fakultät einer Zahl ist das Produkt aller positiven ganzen Zahlen kleiner oder gleich dieser Zahl.”
+
+function calcFactorial(num: number): number {
+  let factorial: number = 1;
+  for (let i = 1; i <= num; i++) {
+    factorial *= i;
+  }
+  return factorial;
+}
+
+console.log(calcFactorial(0));
+console.log(calcFactorial(1));
+console.log(calcFactorial(2));
+console.log(calcFactorial(3));
+console.log(calcFactorial(4));
+console.log(calcFactorial(5));
+console.log(calcFactorial(6));
+
 // - ======================= LEVEL 3_6 =========================
