@@ -54,5 +54,58 @@ function addToFifty(): void {
 addToFifty();
 // - ======================= LEVEL 3_4 =========================
 
+// In dieser Aufgabe soll mit Hilfe eines Loops etwas berechnet werden.
+const parentElement = document.querySelector<HTMLElement>(".task-3-4");
+// Es gibt ein input-Feld, in dem der/die User:in eine Nummer eingeben soll.
+const inputNumElement = document.createElement("input");
+inputNumElement.type = "number";
+inputNumElement.placeholder = "Maximale Zahl";
+parentElement?.appendChild(inputNumElement);
+// Es gibt zwei select-Optionen, bei denen der/die User:in eine Zahl zwischen 2 und 9 auswählen kann.
+// Select-Element anlegen
+const numASelectElement = document.createElement("select");
+const numBSelectElement = document.createElement("select");
+const options: number[] = [2, 3, 4, 5, 6, 7, 8, 9];
+// Für jede Option im Options-Array ein Option-Element in numASelectElement & numBSelectElement anlegen
+options.forEach((value) => {
+  const optionA = document.createElement("option");
+  optionA.value = value.toString();
+  optionA.textContent = value.toString();
+  numASelectElement.appendChild(optionA);
+  const optionB = document.createElement("option");
+  optionB.value = value.toString();
+  optionB.textContent = value.toString();
+  numBSelectElement.appendChild(optionB);
+});
+parentElement?.appendChild(numASelectElement);
+parentElement?.appendChild(numBSelectElement);
+
+// Button zum Abschicken der Eingabe einfügen
+const buttonElement = document.createElement("button");
+buttonElement.textContent = "Calculate";
+parentElement?.appendChild(buttonElement);
+
+// Result Element einfügen
+const resultElement = document.createElement("ü");
+parentElement?.appendChild(resultElement);
+
+// User-Eingaben holen & auf Button Klick Funktion ausführen
+buttonElement.addEventListener("click", () => {
+  const inputNum: number = parseInt(inputNumElement.value);
+  const numASelect: number = parseInt(numASelectElement.value);
+  const numBSelect: number = parseInt(numBSelectElement.value);
+
+  // Es soll jede Zahl von 0 bis zu der Zahl, die der User in das Input-Feld eingegeben hat, überprüft werden. Wenn diese Zahl durch eine der ausgewählten Zahlen teilbar ist, soll sie zur Gesamtsumme addiert werden.
+  let sumDivisibleSelects: number = 0;
+  for (let i = 0; i <= inputNum; i++) {
+    if (i % numASelect === 0 || i % numBSelect === 0) {
+      sumDivisibleSelects += i;
+    }
+  }
+
+  // ResultElement mit Result füllen
+  resultElement.textContent = `${sumDivisibleSelects}`;
+});
+
 // - ======================= LEVEL 3_5 =========================
 // - ======================= LEVEL 3_6 =========================
