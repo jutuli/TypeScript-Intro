@@ -41,8 +41,8 @@ function addToFifty(): void {
   // In der Funktion soll in einer Schleife eine Zufallszahl zwischen 1 und 10 generiert werden
   // Die Zahl soll jeweils auf der Konsole ausgegeben werden
   // Die Zufallszahlen sollen so lange aufaddiert werden, bis die Zahl 50 überschritten wird
-  let sum = 0;
-  let num = 0;
+  let sum: number = 0;
+  let num: number = 0;
   while (sum <= 50) {
     num = Math.ceil(Math.random() * 10);
     console.log(`This Number is being added: ${num}`);
@@ -53,5 +53,6 @@ function addToFifty(): void {
 
 addToFifty();
 // - ======================= LEVEL 3_4 =========================
+
 // - ======================= LEVEL 3_5 =========================
 // - ======================= LEVEL 3_6 =========================
