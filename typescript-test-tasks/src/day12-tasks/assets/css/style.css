@@ -1,3 +1,4 @@
+/* Styles for DOM Elements Task 1_2 */
 .style {
   display: inline-block;
   border-radius: 5px;
@@ -11,4 +12,37 @@
   margin: 5px;
   padding: 5px;
   border-radius: 5px;
+}
+
+/* Styles for DOM Elements Task 2_3 */
+.menu {
+  display: flex;
+  justify-content: space-between;
+  background-color: #333;
+  color: white;
+  align-items: stretch;
+  height: 50px;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#change-button {
+  background-color: green;
+  color: white;
+  border: 0px;
 }

@@ -42,6 +42,23 @@ buttonElement1?.addEventListener("click", () => {
 // #666
 // #333
 
+// Button holen
+const changeButton =
+  document.querySelector<HTMLButtonElement>("#change-button");
+
+if (changeButton) {
+  changeButton.addEventListener("click", () => {
+    const homeElements = document.getElementsByTagName("li");
+    // BackgroundColor Change der Menu-Items
+    homeElements[0].style.backgroundColor = "#f6c89f";
+    homeElements[1].style.backgroundColor = "#ffe7d1";
+    homeElements[2].style.backgroundColor = "#4b8e8d";
+
+    // Schriftfarbe ändern für Menu-Items + Button
+    [...homeElements].forEach((element) => (element.style.color = "#666"));
+    changeButton.style.color = "#666";
+  });
+}
 // - ====================== LEVEL 2_7 =======================
 
 // ! ====================== DOM TS TASKS ====================
