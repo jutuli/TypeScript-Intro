@@ -95,4 +95,33 @@ if (galleryElement) {
 }
 
 // - ====================== LEVEL 1_4 =======================
+// Erstelle ein Input-Feld und einen Button im HTML.
+const sectionElement = document.querySelector("#ts-1-4");
+const inputField = document.createElement("input");
+const addButton = document.createElement("button");
+if (sectionElement) {
+  sectionElement.appendChild(inputField);
+  sectionElement.appendChild(addButton);
+  inputField.setAttribute("placeholder", "hier noch etwas");
+  addButton.textContent = "Text hinzufügen";
+
+  // Erstelle eine Function, die die Eingabe aus einem Textfeld ausliest und dann diesen Text mit dem aktuellen Zeitstempel (nutze dafür new Date()) im HTML-Dokument anzeigt.
+  // Die Funktion soll aufgerufen werden, wenn auf den Button “Text hinzufügen” geklickt wird
+  addButton.addEventListener("click", function createTextWithDate() {
+    // debugger;
+    const inputText: string = inputField.value;
+    const outputText: string = `${new Date()}: ${inputText}`;
+    // Verwende .innerHTML, um dort jeweils den Text und das Datum hinzuzufügen
+    const outputElement = document.createElement("div");
+    sectionElement.appendChild(outputElement);
+    outputElement.innerHTML = `<p>${outputText}</p>`;
+    console.log(outputText);
+    inputField.value = "";
+    // Alternative zu outputElement.innerHTML:
+    // const outputElement = document.createElement("p");
+    // outputElement.textContent = outputText;
+    // sectionElement!.appendChild(outputElement); // hier kann ich mit ! arbeiten, da ich über if(sectionElement) bereits prüfe, ob es vorhanden ist
+  });
+}
+
 // - ====================== LEVEL 1_5 =======================
