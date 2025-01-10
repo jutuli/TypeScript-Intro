@@ -67,6 +67,32 @@ if (infoContainer) {
     input?.setAttribute("type", "text");
   }
 }
+
 // - ====================== LEVEL 1_3 =======================
+// Erstelle im Code drei <figure> -Elemente für eine Galerie.
+//Sie sollen Child-Element der section “gallery” sein
+
+const galleryElement = document.querySelector("#gallery");
+const figure1 = document.createElement("figure");
+const figure2 = document.createElement("figure");
+const figure3 = document.createElement("figure");
+
+if (galleryElement) {
+  galleryElement.appendChild(figure1);
+  galleryElement.appendChild(figure2);
+  galleryElement.appendChild(figure3);
+
+  figure1.innerHTML =
+    "<img src='https://fastly.picsum.photos/id/674/200/200.jpg?hmac=8R8yi_1uaRGCT1W62tjUJFrEyMy2JCZzmrjrXclOens' alt='Grapes'></img>";
+  figure2.innerHTML =
+    "<img src='https://fastly.picsum.photos/id/493/200/200.jpg?hmac=gTkCS4bzTaN0S0X4DVmbvEYkY0QxwyorqWjnxVNHtgg' alt='Strawberry Yogurt'></img>";
+  figure3.innerHTML =
+    "<img src='https://fastly.picsum.photos/id/17/200/200.jpg?hmac=9QDzoqdXorZialFww894D6BqJGalCXFLX2zNQtYENEA' alt='Path in the Woods'></img>";
+
+  figure1.innerHTML += "<figcaption>fig 1</figcaption";
+  figure2.innerHTML += "<figcaption>fig 2</figcaption";
+  figure3.innerHTML += "<figcaption>fig 3</figcaption";
+}
+
 // - ====================== LEVEL 1_4 =======================
 // - ====================== LEVEL 1_5 =======================
