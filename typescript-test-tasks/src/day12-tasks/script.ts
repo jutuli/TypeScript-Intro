@@ -125,3 +125,20 @@ if (sectionElement) {
 }
 
 // - ====================== LEVEL 1_5 =======================
+//Schreibe eine Function showURL(), die ausgeführt wird, wenn du auf den Button "Zeige mir die URL!" klickst.
+const sectionTs15 = document.querySelector("#ts-1-5");
+const urlButtonElement =
+  document.querySelector<HTMLButtonElement>("#url-button");
+
+urlButtonElement?.addEventListener(
+  "click",
+  function showURL() {
+    const currentUrl = window.location.href;
+    const urlOutput = document.createElement("p");
+    urlOutput.textContent = currentUrl;
+    if (sectionTs15) {
+      sectionTs15.appendChild(urlOutput);
+    }
+  }
+  //Filtere über die Function die URL der Seite heraus und lasse sie dir unterhalb des Buttons anzeigen.
+);
