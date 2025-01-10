@@ -22,11 +22,14 @@ buttonElement?.addEventListener("click", () => {
 
 // - ====================== LEVEL 1_2 =======================
 // Schreibe eine Funktion, die beim Anklicken der Buttons die Hintergrundfarben aller Elemente ändert.
+
+// Elemente holen
 const buttonElement1 =
   document.querySelector<HTMLButtonElement>("button.example");
 const exampleElements = document.querySelectorAll(".example");
 
 buttonElement1?.addEventListener("click", () => {
+  // for Loop zum Iterieren über die Elemente
   for (const element of exampleElements) {
     element.classList.toggle("style");
   }
@@ -71,20 +74,26 @@ if (changeButton) {
 // appendChild()
 // classList
 
+//Elemente holen
 const wrapButton = document.querySelector("#wrap-btn");
 const umwickelnElement = document.querySelector(".umwickeln");
 
+// Counter initialisieren
 let counter = 0;
 
 if (wrapButton) {
   wrapButton.addEventListener("click", () => {
+    // neues Element anlegen und Counter als Text hinzufügen
     const numDiv = document.createElement("div");
     numDiv.textContent = counter.toString();
+    // Element in DOM einfügen
     if (umwickelnElement) {
       umwickelnElement?.appendChild(numDiv);
     }
+    // classes hinzufügen (falls counter 0, dann zusätzliche Klasse)
     numDiv.classList.add("rechteck");
     counter === 0 ? numDiv.classList.add("weiss") : "";
+    // Counter hochzählen
     counter++;
   });
 }
@@ -117,16 +126,20 @@ if (infoContainer) {
 // Erstelle im Code drei <figure> -Elemente für eine Galerie.
 //Sie sollen Child-Element der section “gallery” sein
 
+// Parent-Element holen
 const galleryElement = document.querySelector("#gallery");
+// neue Elemente anlegen
 const figure1 = document.createElement("figure");
 const figure2 = document.createElement("figure");
 const figure3 = document.createElement("figure");
 
+// Elemente in DOM hinzufügen
 if (galleryElement) {
   galleryElement.appendChild(figure1);
   galleryElement.appendChild(figure2);
   galleryElement.appendChild(figure3);
 
+  // Images über innerHTML zu kreierten Elementen hinzufügen
   figure1.innerHTML =
     "<img src='https://fastly.picsum.photos/id/674/200/200.jpg?hmac=8R8yi_1uaRGCT1W62tjUJFrEyMy2JCZzmrjrXclOens' alt='Grapes'></img>";
   figure2.innerHTML =
@@ -134,6 +147,7 @@ if (galleryElement) {
   figure3.innerHTML =
     "<img src='https://fastly.picsum.photos/id/17/200/200.jpg?hmac=9QDzoqdXorZialFww894D6BqJGalCXFLX2zNQtYENEA' alt='Path in the Woods'></img>";
 
+  // figcaption über innerHTML += zu kreierten Elementen hinzufügen
   figure1.innerHTML += "<figcaption>fig 1</figcaption";
   figure2.innerHTML += "<figcaption>fig 2</figcaption";
   figure3.innerHTML += "<figcaption>fig 3</figcaption";
@@ -171,19 +185,20 @@ if (sectionElement) {
 
 // - ====================== LEVEL 1_5 =======================
 //Schreibe eine Function showURL(), die ausgeführt wird, wenn du auf den Button "Zeige mir die URL!" klickst.
+
+// Elemente holen
 const sectionTs15 = document.querySelector("#ts-1-5");
 const urlButtonElement =
   document.querySelector<HTMLButtonElement>("#url-button");
 
-urlButtonElement?.addEventListener(
-  "click",
-  function showURL() {
-    const currentUrl = window.location.href;
-    const urlOutput = document.createElement("p");
-    urlOutput.textContent = currentUrl;
-    if (sectionTs15) {
-      sectionTs15.appendChild(urlOutput);
-    }
+//Filtere über die Function die URL der Seite heraus und lasse sie dir unterhalb des Buttons anzeigen.
+urlButtonElement?.addEventListener("click", function showURL() {
+  const currentUrl = window.location.href;
+  // Output-Element anlegen & mit Text befüllen
+  const urlOutput = document.createElement("p");
+  urlOutput.textContent = currentUrl;
+  // Output-Element zu ParentElement hinzufügen
+  if (sectionTs15) {
+    sectionTs15.appendChild(urlOutput);
   }
-  //Filtere über die Function die URL der Seite heraus und lasse sie dir unterhalb des Buttons anzeigen.
-);
+});
