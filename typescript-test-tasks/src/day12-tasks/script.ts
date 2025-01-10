@@ -59,7 +59,35 @@ if (changeButton) {
     changeButton.style.color = "#666";
   });
 }
+
 // - ====================== LEVEL 2_7 =======================
+// Schreibe eine Funktion, die beim Anklicken des Buttons ein Element mit aufsteigenden Nummern erstellt.
+// Nutze:
+// querySelector()
+// addEventListener()
+// let counter = 0;
+// createElement()
+// textContent()
+// appendChild()
+// classList
+
+const wrapButton = document.querySelector("#wrap-btn");
+const umwickelnElement = document.querySelector(".umwickeln");
+
+let counter = 0;
+
+if (wrapButton) {
+  wrapButton.addEventListener("click", () => {
+    const numDiv = document.createElement("div");
+    numDiv.textContent = counter.toString();
+    if (umwickelnElement) {
+      umwickelnElement?.appendChild(numDiv);
+    }
+    numDiv.classList.add("rechteck");
+    counter === 0 ? numDiv.classList.add("weiss") : "";
+    counter++;
+  });
+}
 
 // ! ====================== DOM TS TASKS ====================
 // - ====================== LEVEL 1_2 =======================
