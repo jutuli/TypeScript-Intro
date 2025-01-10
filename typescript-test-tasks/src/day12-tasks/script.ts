@@ -21,6 +21,17 @@ buttonElement?.addEventListener("click", () => {
 });
 
 // - ====================== LEVEL 1_2 =======================
+// Schreibe eine Funktion, die beim Anklicken der Buttons die Hintergrundfarben aller Elemente ändert.
+const buttonElement1 =
+  document.querySelector<HTMLButtonElement>("button.example");
+const exampleElements = document.querySelectorAll(".example");
+
+buttonElement1?.addEventListener("click", () => {
+  for (const element of exampleElements) {
+    element.classList.toggle("style");
+  }
+});
+
 // - ====================== LEVEL 2_3 =======================
 // - ====================== LEVEL 2_7 =======================
 
