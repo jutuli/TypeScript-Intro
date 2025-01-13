@@ -1,4 +1,4 @@
-/* Task 1_3 Styling */
+/* ====== Task 1_3 Styling ====== */
 
 #task-1-3 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -16,7 +16,7 @@
   font-weight: bold;
 }
 
-/*  Task 1_9 Styling */
+/* ====== Task 1_9 Styling ====== */
 
 #task-1-9 {
   padding: 5px;
@@ -25,7 +25,7 @@
   border-radius: 5px;
 }
 
-/* Task 2_2 Styling */
+/* ====== Task 2_2 Styling ====== */
 .input-2-2[type="text"],
 #land {
   width: 100%;
@@ -56,4 +56,17 @@
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
+}
+
+/* ====== Task 2_4 Styling ====== */
+
+#task-2-4 {
+  height: 200px;
+}
+
+#form-2-4 {
+  padding: 5px;
+  display: inline-block;
+  background: #999;
+  border-radius: 5px;
 }

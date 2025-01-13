@@ -112,6 +112,32 @@ if (submitElement && firstNameElement && lastNameElement && countryElement) {
 }
 
 // - ====================== LEVEL 2_4 =======================
+// Schreibe eine Funktion, die beim Anklicken des Buttons die ausgewählte Farboption auf den Hintergrund der <section> anwendet.
+// Verwende folgende Befehle für die Aufgabe:
+// addEventListener(“click”)
+// event.preventDefault();
+// .value oder [selectedIndex].
+// Nutze Google, um zu lernen wie man Leerzeichen in Zeichenketten entfernt.
+
+// Elemente holen
+const sectionElement = document.querySelector<HTMLElement>("#task-2-4");
+const colorChoiceSelectElement =
+  document.querySelector<HTMLSelectElement>("#colorChoice");
+const colorSubmitButton =
+  document.querySelector<HTMLButtonElement>("#button-2-4");
+
+// EventListener auf Button
+if (sectionElement && colorChoiceSelectElement && colorSubmitButton) {
+  colorSubmitButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    const selectedColor = colorChoiceSelectElement.value
+      // Leerzeichen entfernen & alles kleingeschrieben um als CSS-BackgroundColor zu gelten
+      .replaceAll(" ", "")
+      .toLowerCase();
+    console.log(selectedColor);
+    sectionElement.style.backgroundColor = selectedColor;
+  });
+}
 
 // ! =================== DOM EVENTS TASKS =================
 // - ====================== LEVEL 3_1 =======================
