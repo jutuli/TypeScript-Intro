@@ -141,3 +141,100 @@ if (sectionElement && colorChoiceSelectElement && colorSubmitButton) {
 
 // ! =================== DOM EVENTS TASKS =================
 // - ====================== LEVEL 3_1 =======================
+// Du sollst nochmal Funktionen schreiben, die die Hintergrundfarbe der Seite verändert.
+
+//- 1. Ändere die Hintergrundfarbe, wenn auf einen Button geklickt wird.
+
+// Elemente holen
+const sectionBackgroundElement =
+  document.querySelector<HTMLElement>("#task-3-1");
+const pinkButton = document.querySelector<HTMLButtonElement>("#pink-button");
+const purpleButton =
+  document.querySelector<HTMLButtonElement>("#purple-button");
+const orangeButton =
+  document.querySelector<HTMLButtonElement>("#orange-button");
+
+// UpdateBackgroundColor Funktion erstellen
+function updateBackgroundColor(color: string) {
+  if (sectionBackgroundElement) {
+    sectionBackgroundElement.style.backgroundColor = `${color}`;
+  }
+}
+
+// Nutze let count = 0; (global variable).
+let count: number = 0;
+// Anlegen des CounterElements + UpdateCounter Funktion
+const counterElement = document.createElement("p");
+sectionBackgroundElement?.appendChild(counterElement);
+
+function updateCounter(count: number) {
+  if (counterElement && sectionBackgroundElement) {
+    counterElement.textContent = `Die Farbe wurde ${count} x geändert`;
+  }
+}
+// Änderung der BackgroundColor bei Button-Klick auf Rosa, Lila oder Orange
+
+pinkButton?.addEventListener("click", () => {
+  updateBackgroundColor("pink");
+  updateCounter(++count);
+});
+purpleButton?.addEventListener("click", () => {
+  updateBackgroundColor("purple");
+  updateCounter(++count);
+});
+orangeButton?.addEventListener("click", () => {
+  updateBackgroundColor("orange");
+  updateCounter(++count);
+});
+
+//- 2. Ändere die Hintergrundfarbe, wenn die Regler verschoben werden in den jeweiligen Farbwert.
+
+// Zusätzliche Elemente holen
+const redColorInput = document.querySelector<HTMLInputElement>("#red-slider");
+const greenColorInput =
+  document.querySelector<HTMLInputElement>("#green-slider");
+const blueColorInput = document.querySelector<HTMLInputElement>("#blue-slider");
+
+// Initialisieren einer BackgroundColor-Variable mit RGB-Werten:
+let colorArray: number[] = [255, 255, 255];
+
+// Funktion zum Updaten der RGB-Farbe
+function getNewColor(): string {
+  return `rgb(${colorArray[0]},${colorArray[1]},${colorArray[2]})`;
+}
+
+// Änderung der BackgroundColor bei Verschieben eines Reglers
+if (redColorInput && greenColorInput && blueColorInput) {
+  //Regler-Änderung von Rot
+  redColorInput.addEventListener("change", () => {
+    // Update des R-Werts im colorArray
+    colorArray[0] = Number(redColorInput.value);
+    // Aufruf der getNewColor Funktion zum zuweisen des RGB-Werts
+    const newColor = getNewColor();
+    updateBackgroundColor(newColor);
+    // Counter updaten
+    updateCounter(++count);
+  });
+
+  //Regler-Änderung von Grün
+  greenColorInput.addEventListener("change", () => {
+    // Update des G-Werts im colorArray
+    colorArray[1] = Number(greenColorInput.value);
+    // Aufruf der getNewColor Funktion zum zuweisen des RGB-Werts
+    const newColor = getNewColor();
+    updateBackgroundColor(newColor);
+    // Counter updaten
+    updateCounter(++count);
+  });
+
+  //Regler-Änderung von Blau
+  blueColorInput.addEventListener("change", () => {
+    // Update des R-Werts im colorArray
+    colorArray[2] = Number(blueColorInput.value);
+    // Aufruf der getNewColor Funktion zum zuweisen des RGB-Werts
+    const newColor = getNewColor();
+    updateBackgroundColor(newColor);
+    // Counter updaten
+    updateCounter(++count);
+  });
+}
