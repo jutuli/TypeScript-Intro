@@ -1,0 +1,15 @@
+#task-1-3 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 10px;
+  background: #3fc5f0;
+  color: #eef5b2;
+}
+
+.btn-task-1-3 {
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  background: #42dee1;
+  color: #eef5b2;
+  font-weight: bold;
+}
