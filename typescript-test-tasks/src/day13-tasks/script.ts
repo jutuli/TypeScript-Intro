@@ -56,6 +56,26 @@ if (buttonElements && outputElement && myList) {
 }
 
 // - ====================== LEVEL 1_9 =======================
+// Dieses Mal sollst du eine Function schreiben, die beim Anklicken des Buttons die jeweilige Farb-Option aus der Liste entfernt.
+// HTML und CSS ist vorgegeben. Siehe Code-Snippet.
+// Nutze:
+// addEventListener() für den Klick auf den Button
+// selectedIndex() um dir das ausgewählte Element aus dem Select zu holen
+// remove()um über den Index das Element zu löschen
+
+// Elemente holen
+const selectElement =
+  document.querySelector<HTMLSelectElement>("#farbeAuswaehlen");
+const buttonElement = document.querySelector<HTMLButtonElement>("#button-1-9");
+
+if (selectElement && buttonElement) {
+  buttonElement.addEventListener("click", (e) => {
+    // kein Neuladen der Seite durch Button in Form via preventDefault
+    e.preventDefault();
+    // den selectedIndex von selectElement auf selectElement entfernen
+    selectElement.remove(selectElement.selectedIndex);
+  });
+}
 // - ====================== LEVEL 2_2 =======================
 // - ====================== LEVEL 2_4 =======================
 
