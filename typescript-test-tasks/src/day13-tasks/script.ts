@@ -237,4 +237,15 @@ if (redColorInput && greenColorInput && blueColorInput) {
     // Counter updaten
     updateCounter(++count);
   });
+
+  //- 3. RGB in HEX umwandeln
+
+  function rgbToHex(r: number, g: number, b: number) {
+    const red = r.toString(16).padStart(2, "0");
+    const green = g.toString(16).padStart(2, "0");
+    const blue = b.toString(16).padStart(2, "0");
+    return `#${red}${green}${blue}`;
+  }
+
+  rgbToHex(colorArray[0], colorArray[1], colorArray[2]);
 }
