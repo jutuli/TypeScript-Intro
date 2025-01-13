@@ -57,7 +57,6 @@ if (buttonElements && outputElement && myList) {
 
 // - ====================== LEVEL 1_9 =======================
 // Dieses Mal sollst du eine Function schreiben, die beim Anklicken des Buttons die jeweilige Farb-Option aus der Liste entfernt.
-// HTML und CSS ist vorgegeben. Siehe Code-Snippet.
 // Nutze:
 // addEventListener() für den Klick auf den Button
 // selectedIndex() um dir das ausgewählte Element aus dem Select zu holen
@@ -77,6 +76,41 @@ if (selectElement && buttonElement) {
   });
 }
 // - ====================== LEVEL 2_2 =======================
+// Beim Anklicken des Buttons sollen die Werte aus dem Formular in der Konsole ausgegeben werden.
+
+// Elemente holen
+const firstNameElement = document.querySelector<HTMLInputElement>("#vorname");
+const lastNameElement = document.querySelector<HTMLInputElement>("#nachname");
+const countryElement = document.querySelector<HTMLSelectElement>("#land");
+const submitElement = document.querySelector<HTMLInputElement>(
+  "input[type='submit']"
+);
+
+if (submitElement && firstNameElement && lastNameElement && countryElement) {
+  submitElement.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log(firstNameElement.value);
+    console.log(lastNameElement.value);
+    console.log(countryElement.value);
+    // Definiere einen Typ SimplePerson
+    type SimplePerson = {
+      firstName: string;
+      lastName: string;
+      country: string;
+    };
+
+    // Lege jetzt zusätzlich ein Objekt vom Typ SimplePerson an, das die Werte aus dem Formular erhält
+    const myPerson: SimplePerson = {
+      firstName: firstNameElement.value,
+      lastName: lastNameElement.value,
+      country: countryElement.value,
+    };
+
+    // Lass dir das Objekt auf der Konsole ausgeben
+    console.log(myPerson);
+  });
+}
+
 // - ====================== LEVEL 2_4 =======================
 
 // ! =================== DOM EVENTS TASKS =================
