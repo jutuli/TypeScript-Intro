@@ -214,6 +214,8 @@ if (redColorInput && greenColorInput && blueColorInput) {
     updateBackgroundColor(newColor);
     // Counter updaten
     updateCounter(++count);
+    // HEX-Code in Console ausgeben
+    console.log(rgbToHex(colorArray[0], colorArray[1], colorArray[2]));
   });
 
   //Regler-Änderung von Grün
@@ -225,6 +227,8 @@ if (redColorInput && greenColorInput && blueColorInput) {
     updateBackgroundColor(newColor);
     // Counter updaten
     updateCounter(++count);
+    // HEX-Code in Console ausgeben
+    console.log(rgbToHex(colorArray[0], colorArray[1], colorArray[2]));
   });
 
   //Regler-Änderung von Blau
@@ -236,6 +240,8 @@ if (redColorInput && greenColorInput && blueColorInput) {
     updateBackgroundColor(newColor);
     // Counter updaten
     updateCounter(++count);
+    // HEX-Code in Console ausgeben
+    console.log(rgbToHex(colorArray[0], colorArray[1], colorArray[2]));
   });
 
   //- 3. RGB in HEX umwandeln
@@ -246,6 +252,4 @@ if (redColorInput && greenColorInput && blueColorInput) {
     const blue = b.toString(16).padStart(2, "0");
     return `#${red}${green}${blue}`;
   }
-
-  rgbToHex(colorArray[0], colorArray[1], colorArray[2]);
 }
