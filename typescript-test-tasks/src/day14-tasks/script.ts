@@ -65,4 +65,79 @@ showUserDetailsArrow({
 });
 
 // - ====================== LEVEL 1_6 =======================
+
+// Lege einen Typ Monster mit folgenden Pflicht-Eigenschaften an: name, type, health, strength, speed
+
+type Monster = {
+  name: string;
+  type: string;
+  health: number;
+  strength: number;
+  speed: number;
+};
+
+type createMonsterParams = {
+  name: string;
+  type: string;
+  health?: number;
+  strength?: number;
+  speed?: number;
+};
+
+// Erstelle eine Funktion createMonster, die ein Monster erzeugt und zurückgibt
+// name und type müssen immer an die Funktion übergeben werden
+// werden health, strength und speed nicht angegeben, sollen diese Standardwerte verwendet werden
+// health = 100, strength = 50, speed = 25
+
+function createMonster({
+  name,
+  type,
+  health = 100,
+  strength = 50,
+  speed = 25,
+}: createMonsterParams): Monster {
+  const createdMonster: Monster = { name, type, health, strength, speed };
+  console.log(createdMonster);
+  return createdMonster;
+}
+
+// Alternativ: nicht als Objekt angeben, sondern als einzelne Parameter
+// kann zu Problemen führen, wenn ich nur bestimmte optionale Parameter mit Argument besetzen will (z.B. nur den letzten)
+// function createMonster2(
+//   name: string,
+//   type: string,
+//   health: number = 100,
+//   strength: number = 50,
+//   speed: number = 25
+// ): Monster {
+//   const createdMonster: Monster = { name, type, health, strength, speed };
+//   return createdMonster;
+// }
+
+// Lege mit Hilfe der Funktion mehrere Monster an, gebe dabei an:
+// 2 Parameter
+
+createMonster({ name: "rainbow", type: "sky monster" });
+
+// 3 Parameter
+
+createMonster({ name: "blizzard", type: "sky monster", speed: 300 });
+
+// 4 Parameter
+createMonster({
+  name: "earthshaker",
+  type: "forest monester",
+  health: 70,
+  strength: 40,
+});
+
+// 5 Parameter
+createMonster({
+  name: "giant worm",
+  type: "forest monester",
+  health: 97,
+  strength: 23,
+  speed: 245,
+});
+
 // - ====================== LEVEL 3_1 =======================
