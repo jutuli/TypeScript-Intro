@@ -141,3 +141,65 @@ createMonster({
 });
 
 // - ====================== LEVEL 3_1 =======================
+// Erstelle vier SuperBalls: Durch das Anklicken eines SuperBalls ändert sich die Hintergrundfarbe der <section> und die Textfarbe der Überschrift <h2>.
+// Nutze CSS um die Elemente zu stylen. Entweder nutzt du linear-gradient oder du sprichst jeden Halbkreis selber an.
+// In deinem TS-Code definierst du dann was beim Klick auf den jeweiligen SuperBall passieren soll.
+// schreibe eine Funktion für die Änderung der Farben, die in jedem EventHandler verwendet wird
+// Lass dir die Superballs auf Basis eines Arrays von Objekten im Code generieren
+
+// Type Superball anlegen für die Erstellung von Superball-Obekten
+type Superball = {
+  bgColor: string;
+  textColor: string;
+};
+
+// Array mit Superball-Objekten
+const superballObjects: Superball[] = [
+  {
+    bgColor: "green",
+    textColor: "purple",
+  },
+  {
+    bgColor: "mediumpurple",
+    textColor: "gold",
+  },
+  {
+    bgColor: "black",
+    textColor: "orange",
+  },
+  {
+    bgColor: "midnightblue",
+    textColor: "skyblue",
+  },
+];
+
+// Funktion um Superballs zu kreieren + in DOM zu überführen
+const container = document.querySelector(".superballs");
+function createSuperballs() {
+  // Falls es container nicht gibt, aus Funktion raus
+  if (!container) return;
+  superballObjects.forEach((superball: Superball) => {
+    // Superball-Element anlegen und in DOM überführen
+    const ball = document.createElement("div");
+    container.appendChild(ball);
+    ball.className = "superball";
+    ball.style.background = `linear-gradient(45deg, ${superball.bgColor} 0 50%, ${superball.textColor} 50% 100%)`;
+  });
+}
+
+createSuperballs();
+
+// Funktion zum Ändern der Farben
+function changeColors(superball: Superball) {
+  // Section-Element (hier soll die BG-Color geändert werden) & H2-Element (hier soll TextColor geändert werden) holen
+  const section = document.querySelector<HTMLElement>("#task-3-1");
+  const header = document.querySelector<HTMLElement>("h2");
+  if (section) section.style.background = superball.bgColor;
+  if (header) header.style.color = superball.textColor;
+}
+
+// EventListener bei Klick auf jeweils ein bestimmtes Div-Element der Klasse superball um changeColors auf dem jeweiligen Object auszuführen
+[...document.querySelectorAll<HTMLDivElement>(".superball")]?.forEach(
+  (ball, index: number) =>
+    ball.addEventListener("click", () => changeColors(superballObjects[index]))
+);
