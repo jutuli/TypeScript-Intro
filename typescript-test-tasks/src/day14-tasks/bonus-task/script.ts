@@ -40,22 +40,17 @@ let morseAlphabet = [
 
 // Es muss eine Funktion entwickelt werden, mit der man einfachen Text in Morsecode übersetzen kann.
 function translateToMorse(text: string): string {
-  let textArray: string[] = [];
-  // Für jeden Character im Text wird das textArray um den Character in Großbuchstaben verlängert
+  // Output-Variable initialisieren
+  let morseOutput: string = "";
+  // Für jeden Character im Text in Großbuchstaben wird überprüft, ob es im morseAlphabet ein passendes Element gibt
   for (let i = 0; i < text.length; i++) {
-    textArray.push(text.charAt(i).toUpperCase());
-  }
-
-  // für jedes Element im textArray wird geprüft, ob ein Äquivalent im morseAlphabet vorhanden ist und wenn ja, wird davon der Buchstabe ins morseArray eingefügt
-  const morseArray: string[] = textArray.map((character) => {
-    const morseMatch =
+    const character = text.charAt(i).toUpperCase();
+    const morseMatch: string =
       morseAlphabet.find((element) => element.letter === character)
         ?.morseCode || "";
-    return morseMatch;
-  });
-
-  // Übersetzen des morseArrays in einen String
-  const morseOutput: string = [...morseArray].toString();
+    //  das gefundene Element wird dem morseOutput hinzugefügt
+    morseOutput += morseMatch + " ";
+  }
   return morseOutput;
 }
 
