@@ -1,7 +1,8 @@
 import { BasketballCard } from "../data.ts";
 
-function createCard(cardData: BasketballCard): void {
-  const cardsSection = document.querySelector("#collection");
+// Funktion um eine neue Card anzulegen
+export function createCard(cardData: BasketballCard): void {
+  const cardsArea = document.querySelector("#collection");
   const newCard = document.createElement("div");
   newCard.style.backgroundImage = `url("${cardData.imageUrl}")`;
   newCard.classList.add(
@@ -15,8 +16,10 @@ function createCard(cardData: BasketballCard): void {
     "flex",
     "flex-col",
     "justify-end",
+    "relative",
   );
   newCard.innerHTML = `
+  <button class= "delete-btn absolute top-2 right-4 font-sans text-2xl hover:text-red-600 hover:cursor-pointer">x</button>
   <div class="bg-black/50 w-full p-4 rounded-lg">
   <h1 class="text-lg font-bold">${cardData.firstName} ${cardData.lastName}</h1>
   <p>Age: <span class= font-bold>${cardData.age}</span>  |  Height: <span class= font-bold>${cardData.height}</span></p>
@@ -25,7 +28,13 @@ function createCard(cardData: BasketballCard): void {
   <p>Points per Game (PPG): <span class= font-bold>${cardData.ppg}</span></p>
   </div>
   `;
-  cardsSection?.appendChild(newCard);
-}
 
-export default createCard;
+  // Funktion, um eine Card wieder zu löschen (nicht im Document, sondern in newCard da noch nicht angelegt)
+  newCard
+    .querySelector<HTMLButtonElement>(".delete-btn")
+    ?.addEventListener("click", () => {
+      newCard.remove();
+    });
+
+  cardsArea?.appendChild(newCard);
+}

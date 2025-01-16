@@ -1,6 +1,6 @@
 import { getFormData } from "./components/formExtractor.ts";
 import { resetForm } from "./components/formExtractor.ts";
-import createCard from "./components/CardCreator.ts";
+import { createCard } from "./components/CardCreator.ts";
 
 // Interaktion des Formulars verwalten
 // Formulareingabe sammeln
