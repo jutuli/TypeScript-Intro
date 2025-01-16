@@ -1,4 +1,5 @@
-import getFormData from "./components/formExtractor.ts";
+import { getFormData } from "./components/formExtractor.ts";
+import { resetForm } from "./components/formExtractor.ts";
 import createCard from "./components/CardCreator.ts";
 
 // Interaktion des Formulars verwalten
@@ -13,7 +14,7 @@ export const initializeUI = () => {
     const formData = getFormData();
     if (formData !== null) {
       createCard(formData);
+      resetForm();
     }
-    console.log(formData);
   });
 };

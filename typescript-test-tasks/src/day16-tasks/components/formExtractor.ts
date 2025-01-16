@@ -1,7 +1,7 @@
 import { BasketballCard } from "../data.ts";
 
 // Formulardaten holen und in Objekt abspeichern (inkl. Logik falls Daten fehlen)
-function getFormData(): BasketballCard | null {
+export function getFormData(): BasketballCard | null {
   const firstName: string =
     document.querySelector<HTMLInputElement>("#first-name")?.value ??
     "Not Found";
@@ -53,4 +53,24 @@ function getFormData(): BasketballCard | null {
   }
 }
 
-export default getFormData;
+// Form resetten
+export function resetForm(): void {
+  const fields: string[] = [
+    "#first-name",
+    "#last-name",
+    "#age",
+    "#height",
+    "#current-team",
+    "#jersey-number",
+    "#position",
+    "#ppg",
+    "#img-url",
+  ];
+
+  for (let field of fields) {
+    const inputField = document.querySelector<HTMLInputElement>(`${field}`);
+    if (inputField) {
+      inputField.value = "";
+    }
+  }
+}
