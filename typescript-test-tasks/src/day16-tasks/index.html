@@ -1,14 +1,98 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Basketball Trading Cards Collection</title>
     <link rel="stylesheet" href="style.css" />
-    <script type="module" src="app.ts"></script>
+    <script defer type="module" src="app.ts"></script>
   </head>
   <body>
-    <h1>My Basketball Trading Cards Collection</h1>
-    <section id="add-card"></section>
+    <section class="trading-cards-collection mx-auto w-5/6">
+      <h1 class="m-10 text-center text-3xl font-bold">
+        My Basketball Trading Cards Collection
+      </h1>
+      <section id="add-card" class="flex w-full flex-col">
+        <h2 class="py-5 text-xl font-bold">Add a new Card</h2>
+        <form class="mb-10 flex w-full flex-col gap-4">
+          <div class="player-name flex w-full gap-2">
+            <input
+              class="flex-1 rounded-md border border-gray-400 p-2"
+              type="text"
+              placeholder="First Name"
+              id="first-name"
+            />
+            <input
+              class="flex-1 rounded-md border border-gray-400 p-2"
+              type="text"
+              placeholder="Last Name"
+              id="last-name"
+            />
+          </div>
+          <div class="player-physical flex w-full gap-2">
+            <input
+              class="flex-1 rounded-md border border-gray-400 p-2"
+              type="number"
+              step="1"
+              placeholder="Age in Years"
+              id="age"
+            />
+            <input
+              class="flex-1 rounded-md border border-gray-400 p-2"
+              type="number"
+              step="1"
+              placeholder="Height in cm"
+              id="height"
+            />
+          </div>
+          <div class="team-info flex w-full gap-2">
+            <input
+              class="flex-1 rounded-md border border-gray-400 p-2"
+              type="text"
+              placeholder="Current Team"
+              id="current-team"
+            />
+            <input
+              class="flex-1 rounded-md border border-gray-400 p-2"
+              type="number"
+              placeholder="Jersey Number"
+              id="jersey-number"
+            />
+          </div>
+          <div class="player-stats flex w-full gap-2">
+            <input
+              class="flex-1 rounded-md border border-gray-400 p-2"
+              type="text"
+              placeholder="Position"
+              id="position"
+            />
+            <input
+              class="flex-1 rounded-md border border-gray-400 p-2"
+              type="number"
+              step="0.1"
+              placeholder="Points per Game (PPG)"
+              id="ppg"
+            />
+          </div>
+          <input
+            class="flex-1 rounded-md border border-gray-400 p-2"
+            type="text"
+            placeholder="Image URL"
+            id="img-url"
+          />
+          <button
+            class="rounded-md border-1 bg-blue-700 px-10 py-3 text-white hover:cursor-pointer hover:bg-blue-800"
+            id="add-card-btn"
+            type="submit"
+          >
+            Add Card to My Collection
+          </button>
+        </form>
+        <section id="collection-section" class="flex w-full flex-col">
+          <h2 class="py-5 text-xl font-bold">My Collection</h2>
+          <div id="collection" class="flex w-full gap-4"></div>
+        </section>
+      </section>
+    </section>
   </body>
 </html>
