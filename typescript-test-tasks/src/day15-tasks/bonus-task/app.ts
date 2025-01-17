@@ -4,8 +4,8 @@
 import {
   createAlphabetButtons,
   createDifficultySelect,
-  createCounter,
   createMaxAttempts,
+  updateMaxAttempts,
   createHangmanLines,
   updateHangmanLines,
 } from "./ui";
@@ -35,8 +35,15 @@ let hangmanLines = createHangmanLines(randomWord.length);
 // maxAttempts Standard ist auf Easy und damit auf Länge des Worts
 let maxAttempts: number = randomWord.length;
 
+// Counter erstellen und auf 0 initialisieren
+let counter = 0;
+
 // Maximale Versuche in DOM anzeigen lassen
 createMaxAttempts(maxAttempts);
+// Updaten des Counters
+const updateCounter = () => {
+  counter++;
+};
 
 // falls difficultySelect auf Difficult gestellt wird, dann wird maxAttempts halbiert
 difficultySelect.addEventListener("change", () => {
@@ -50,15 +57,6 @@ difficultySelect.addEventListener("change", () => {
     createMaxAttempts(maxAttempts);
   }
 });
-
-// Counter erstellen und auf 0 initialisieren
-const counterElement = createCounter();
-let counter = 0;
-// Updaten des Counters
-const updateCounter = () => {
-  counter++;
-  counterElement.textContent = `Bisherige Fehlversuche: ${counter}`;
-};
 
 // Buttonauswahl mit RandomWord vergleichen
 const playHangman = () => {
@@ -81,6 +79,7 @@ const playHangman = () => {
         }
       } else {
         updateCounter();
+        updateMaxAttempts(maxAttempts, counter);
 
         if (counter >= maxAttempts) {
           window.alert("Du hast verloren. Du hast alle Versuche aufgebraucht.");

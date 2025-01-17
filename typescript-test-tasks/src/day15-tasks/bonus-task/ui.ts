@@ -39,19 +39,23 @@ export const createDifficultySelect = (): HTMLSelectElement => {
 };
 
 // Anzeige der Maximalanzahl von Versuchen
+const maxAttemptsElement = document.createElement("p");
 export const createMaxAttempts = (attempts: number): void => {
-  const maxAttemptsElement = document.createElement("p");
-  maxAttemptsElement.textContent = `Du hast ${attempts} Fehlversuche.`;
+  maxAttemptsElement.textContent = `Du hast noch ${attempts} Fehlversuche.`;
   maxAttemptsElement.setAttribute("id", "max-attempts");
   difficultyContainer.appendChild(maxAttemptsElement);
 };
 
-// Counter erstellen mit Anzahl der bereits getätigten Versuche
-export const createCounter = (): HTMLElement => {
-  const counterElement = document.createElement("p");
-  difficultyContainer.appendChild(counterElement);
-  return counterElement;
+export const updateMaxAttempts = (attempts: number, counter: number): void => {
+  maxAttemptsElement.textContent = `Du hast noch ${attempts - counter} Fehlversuche.`;
 };
+
+// // Counter erstellen mit Anzahl der bereits getätigten Versuche
+// export const createCounter = (): HTMLElement => {
+//   const counterElement = document.createElement("p");
+//   difficultyContainer.appendChild(counterElement);
+//   return counterElement;
+// };
 
 // Alphabet als Variable anlegen
 const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
