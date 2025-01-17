@@ -11,7 +11,7 @@ function checkPermissions(permission: Permissions) {
     return;
   }
   if (permission === Permissions.NONE) {
-    console.log("You don't have any permission");
+    console.log("You don't have any permissions.");
     return;
   }
   console.log("You have the following permissions:");
