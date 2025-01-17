@@ -42,6 +42,7 @@ export const createDifficultySelect = (): HTMLSelectElement => {
 const maxAttemptsElement = document.createElement("p");
 export const createMaxAttempts = (attempts: number): void => {
   maxAttemptsElement.textContent = `Du hast noch ${attempts} Fehlversuche.`;
+  maxAttemptsElement.className = "color-gray-900 mb-10 text-lg font-bold";
   maxAttemptsElement.setAttribute("id", "max-attempts");
   difficultyContainer.appendChild(maxAttemptsElement);
 };
