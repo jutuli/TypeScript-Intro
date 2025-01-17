@@ -1,7 +1,6 @@
 // gehört zu Task Level 3_2
 import { Permissions } from "./permissions";
 
-// Lege eine Datei ar-app.ts an
 // Hat ein User eine höhere Berechtigung, schließt das die darunterliegenden mit ein: (Berechtigung Execute schließt das Read und Write mit ein…)
 // Schreibe dort eine Funktion, die als Parameter einen Enum//Wert für Permissions übergeben bekommt und auf der Konsole ausgibt, welche Berechtigungen eingeschlossen sind
 
