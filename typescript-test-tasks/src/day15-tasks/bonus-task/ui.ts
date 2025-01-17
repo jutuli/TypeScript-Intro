@@ -45,6 +45,8 @@ export const createAlphabetButtons = (): HTMLButtonElement[] => {
   for (const character of alphabet) {
     const button = document.createElement("button");
     button.textContent = character;
+    button.className =
+      "aspect-square w-10 rounded-md border bg-sky-800 font-bold text-white disabled:bg-sky-200";
     button.setAttribute("value", character);
     parentContainer.appendChild(button);
     buttons.push(button);
@@ -66,7 +68,7 @@ export const createHangmanLines = (numberOfCharacters: number): string => {
 export const updateHangmanLines = (
   word: string,
   guessedLetter: string,
-  currentLines: string
+  currentLines: string,
 ): string => {
   const updatedLines = currentLines.split(" ");
   for (let i = 0; i < word.length; i++) {

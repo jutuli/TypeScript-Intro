@@ -22,7 +22,7 @@ export function createCard(cardData: BasketballCard): void {
   <button class= "delete-btn absolute top-2 right-4 font-sans text-2xl hover:text-red-600 hover:cursor-pointer">x</button>
   <div class="bg-black/50 w-full p-4 rounded-lg">
   <h1 class="text-lg font-bold">${cardData.firstName} ${cardData.lastName}</h1>
-  <p>Age: <span class= font-bold>${cardData.age}</span>  |  Height: <span class= font-bold>${cardData.height}</span></p>
+  <p>Age: <span class= font-bold>${cardData.age}</span>  |  Height: <span class= font-bold>${cardData.height} cm</span></p>
   <p>Current Team: <span class= font-bold>${cardData.currentTeam}</span>  |  Jersey # <span class= font-bold>${cardData.jerseyNumber}</span></p>
   <p>Position: <span class= font-bold>${cardData.position}</span></p>
   <p>Points per Game (PPG): <span class= font-bold>${cardData.ppg}</span></p>
