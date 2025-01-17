@@ -17,15 +17,6 @@ const difficultySelect = createDifficultySelect();
 // Alphabet-Buttons erstellen
 const buttons = createAlphabetButtons();
 
-// Counter erstellen und auf 0 initialisieren
-const counterElement = createCounter();
-let counter = 0;
-// Updaten des Counters
-const updateCounter = () => {
-  counter++;
-  counterElement.textContent = `Bisherige Versuche: ${counter}`;
-};
-
 // Auswahl eines zufälligen Worts
 const chooseRandomWord = () => {
   const index = Math.floor(Math.random() * words.length);
@@ -60,6 +51,15 @@ difficultySelect.addEventListener("change", () => {
   }
 });
 
+// Counter erstellen und auf 0 initialisieren
+const counterElement = createCounter();
+let counter = 0;
+// Updaten des Counters
+const updateCounter = () => {
+  counter++;
+  counterElement.textContent = `Bisherige Fehlversuche: ${counter}`;
+};
+
 // Buttonauswahl mit RandomWord vergleichen
 const playHangman = () => {
   // Event-Listener für den Button-Klick
@@ -73,7 +73,7 @@ const playHangman = () => {
         const updatedHangmanLines = updateHangmanLines(
           randomWord,
           button.value,
-          hangmanLines
+          hangmanLines,
         );
         hangmanLines = updatedHangmanLines;
         if (!hangmanLines.includes("_")) {
@@ -86,7 +86,7 @@ const playHangman = () => {
           window.alert("Du hast verloren. Du hast alle Versuche aufgebraucht.");
         }
       }
-    })
+    }),
   );
 };
 
