@@ -48,4 +48,52 @@ document.querySelector("#btn")?.addEventListener("click", () => {
 });
 
 // - ======================== LEVEL 1_3 ========================
+// Schreibe eine Function, die sich Daten aus dem Browser zieht und diese auf einer Seite anzeigt. Schaue dir zum besseren Verständnis die Vorschau an.
+// Schau dir dazu auch nochmal die Dokumentation von window.navigator an
+// Hole dir die Informationen über den Browser wie folgt:
+// Browsername
+// Betriebssystem-Architektur
+// Browser-Version
+// Window Auflösung
+// Innenhöhe und -breite des Dokuments
+// colorDepth
+// pixelDepth
+
+function getData() {
+  // Section-Element holen
+  const sectionElement = document.querySelector(".task1-3");
+  // falls Section-Element nicht existiert, aus Funktion returnen
+  if (!sectionElement) return;
+
+  // Data-Objekt anlegen
+  const data = {
+    // Browsername
+    Browsername: window.navigator.appName,
+    // Betriebssystem
+    Betriebssystem: window.navigator.platform,
+    // Browser Version
+    Browserversion: window.navigator.userAgent,
+    // Window-Auflösung
+    "Window-Aufloesung": window.navigator.userAgent,
+    // Dokumentenhöhe
+    Dokumentenhoehe: window.innerHeight,
+    // Dokumentenbreite
+    Dokumentenbreite: window.innerWidth,
+    // Color Depth
+    "Color Depth": window.screen.colorDepth,
+    // Pixel Depth
+    "Pixel Depth": window.screen.pixelDepth,
+  };
+
+  // Über Data-Objekt-Entries iterieren und Paragraph-Elemente anlegen
+  Object.entries(data).forEach(([key, value]) => {
+    const paragraphElement = document.createElement("p");
+    paragraphElement.textContent = `${key}: ${value}`;
+    sectionElement.appendChild(paragraphElement);
+  });
+}
+
+// Funktion getData wird auf Button-Click ausgeführt
+document.querySelector("#get-data-btn")?.addEventListener("click", getData);
+
 // - ======================== LEVEL 2_1 ========================
