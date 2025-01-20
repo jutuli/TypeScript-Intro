@@ -120,3 +120,83 @@ window.onload = () => {
     }
   }, 1000);
 };
+
+// - ======================== LEVEL 3_2 ========================
+// Schreibe eine Function, die einen Countdown in Minuten anzeigt und sich pausieren und neu starten lässt.
+// HTML und CSS ist vorgegeben (siehe Code-Snippet).
+// Nutze unter Anderem:
+// setInterval()
+// clearInterval()
+// if-Statements.
+
+// Get Required Elements
+const timeDisplay = document.querySelector("#time");
+const minuteInput = document.querySelector<HTMLInputElement>("#minutes");
+const startButton = document.querySelector("#start-button");
+const pauseButton = document.querySelector("#pause-button");
+const restartButton = document.querySelector("#restart-button");
+
+function createCountdown(): void {
+  if (
+    !timeDisplay ||
+    !minuteInput ||
+    !startButton ||
+    !pauseButton ||
+    !restartButton
+  )
+    return;
+
+  // Remaining Seconds & IntervalId auf 0 initialisieren, um Abgleich und späteres Löschen/Überschreiben zu ermöglichen
+  let remainingSeconds: number = 0;
+  let intervalId: number = 0;
+  //InputValue auslesen und in Sekunden umrechnen (falls kein Input wird 1 Minute gesetzt)
+  const inputValue = parseInt(minuteInput.value) || 1;
+  const initialSeconds = inputValue * 60;
+
+  // Countdown starten
+  startButton.addEventListener("click", () => {
+    //mehrfaches Starten vermeiden
+    if (intervalId !== 0) return;
+    // Start des Countdowns setzen (wenn kein Zahlen-Input, dann 1 Minute) falls es nicht das Weiterlaufen des Countdowns ist (also remainingSeconds > 0 ist)
+    if (remainingSeconds === 0) {
+      remainingSeconds = initialSeconds;
+    }
+
+    // Display initial setzen
+    updateDisplay();
+    // Countdown starten
+    intervalId = setInterval(() => {
+      // wenn Zeit abgelaufe, Countdown stoppen
+      if (remainingSeconds <= 0) {
+        clearInterval(intervalId);
+        intervalId = 0;
+      } else {
+        remainingSeconds--;
+        updateDisplay();
+      }
+    }, 1000);
+  });
+
+  // Aktualisieren der Countdown-Anzeige
+  const updateDisplay = () => {
+    const minutes: number = Math.floor(remainingSeconds / 60);
+    const seconds: number = remainingSeconds % 60;
+    timeDisplay.textContent = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+  };
+
+  // Countdown unterbrechen
+  pauseButton.addEventListener("click", () => {
+    clearInterval(intervalId);
+    intervalId = 0;
+  });
+
+  // Countdown zurücksetzen auf initialen Wert -> Neustart dann mit erneutem Klick auf Start-Button
+  restartButton.addEventListener("click", () => {
+    clearInterval(intervalId);
+    // remainingSeconds auf initialen Inputwert zurücksetzen
+    remainingSeconds = initialSeconds;
+    updateDisplay();
+  });
+}
+
+createCountdown();
