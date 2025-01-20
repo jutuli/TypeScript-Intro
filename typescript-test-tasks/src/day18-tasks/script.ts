@@ -97,3 +97,26 @@ function getData() {
 document.querySelector("#get-data-btn")?.addEventListener("click", getData);
 
 // - ======================== LEVEL 2_1 ========================
+// Schreibe eine Function, die beim Laden der Seite die Zahlen runter zählt. Schau dir dazu die Ergebnisvorschau an.
+// Nutzen kannst du:
+// setInterval()
+// clearInterval()
+// getElementsByClassName() oder getElementById()
+// if/else if.
+
+window.onload = () => {
+  const count = document.querySelector("#count");
+  const message = document.querySelector(".message");
+  const section = document.querySelector(".task2-1");
+  let seconds = 10;
+  if (!count || !message || !section) return;
+  const timer = setInterval(() => {
+    if (seconds === 0) {
+      section.removeChild(message);
+      clearInterval(timer);
+    } else {
+      count.textContent = seconds.toString();
+      seconds--;
+    }
+  }, 1000);
+};
