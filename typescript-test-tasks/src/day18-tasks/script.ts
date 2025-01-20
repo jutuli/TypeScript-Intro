@@ -30,5 +30,22 @@ function countdown(): void {
 countdown();
 
 // - ======================== LEVEL 1_2 ========================
+// Schreibe eine Function, die beim Klicken des Buttons von 100% bis 0% runterzählt.
+// HTML und CSS ist vorgegeben (siehe Code-Snippet).
+// Nutzen kannst du folgende Befehle und Methoden:  addEventListener, setInterval(), clearInterval(), if, else if und querySelector() oder getElementById().
+
+document.querySelector("#btn")?.addEventListener("click", () => {
+  const zeitElement = document.querySelector(".zeit");
+  let zeit = 100;
+  const timer = setInterval(() => {
+    if (zeitElement && zeit >= 0) {
+      zeitElement.textContent = `${zeit}%`;
+      zeit--;
+    } else {
+      clearInterval(timer);
+    }
+  }, 100);
+});
+
 // - ======================== LEVEL 1_3 ========================
 // - ======================== LEVEL 2_1 ========================
