@@ -25,7 +25,7 @@
         placeholder="What are you looking for?"
       />
       <button
-        class="rounded-4xl bg-orange-600 px-10 py-3 font-bold text-slate-100"
+        class="cursor-pointer rounded-4xl bg-orange-600 px-10 py-3 font-bold text-slate-100 hover:bg-orange-500"
         type="submit"
       >
         SEARCH
@@ -33,24 +33,24 @@
     </form>
     <div class="btn-group flex items-center justify-center gap-4">
       <button
-        class="w-44 rounded-4xl border border-orange-600 bg-transparent py-3 font-semibold text-gray-900"
+        class="w-44 cursor-pointer rounded-4xl border border-orange-600 bg-transparent py-3 font-semibold text-gray-900 hover:bg-orange-600 hover:text-slate-100"
         type="button"
       >
         YEAR UP
       </button>
       <button
-        class="w-44 rounded-4xl border border-orange-600 bg-transparent py-3 font-semibold text-gray-900"
+        class="w-44 cursor-pointer rounded-4xl border border-orange-600 bg-transparent py-3 font-semibold text-gray-900 hover:bg-orange-600 hover:text-slate-100"
         type="button"
       >
         YEAR DOWN
       </button>
       <button
-        class="w-44 rounded-4xl border border-orange-600 bg-transparent py-3 font-semibold text-gray-900"
+        class="w-44 cursor-pointer rounded-4xl border border-orange-600 bg-transparent py-3 font-semibold text-gray-900 hover:bg-orange-600 hover:text-slate-100"
         type="button"
       >
         BEST RATING
       </button>
     </div>
-    <section id="movie-grid"></section>
+    <section class="m-10 grid grid-cols-3 gap-4" id="movie-grid"></section>
   </body>
 </html>
