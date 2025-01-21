@@ -18,6 +18,13 @@ document.querySelector("#submit-btn")?.addEventListener("click", (e) => {
   searchMovies(searchInputValue);
 });
 
+document.querySelector("#search-input")?.addEventListener("input", () => {
+  // Input auslesen
+  const searchInput = document.querySelector<HTMLInputElement>("#search-input");
+  const searchInputValue = searchInput?.value || "";
+  searchMovies(searchInputValue);
+});
+
 // Klick auf "Year Up" Button ermöglicht Sortierung nach Jahr (aufsteigend)
 document
   .querySelector("#year-up-btn")
