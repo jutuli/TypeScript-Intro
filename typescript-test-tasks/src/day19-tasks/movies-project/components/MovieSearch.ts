@@ -5,7 +5,11 @@ import createMovieCard from "./MovieCard";
 function searchMovies(input: string) {
   const matchingMovies = movies.filter((movie) => {
     for (const element of movie) {
-      if (element.includes(input)) {
+      if (
+        // Typ muss String sein, damit über lowerCase gesucht werden kann (funktioniert nicht auf string[])
+        typeof element === "string" &&
+        element.toLowerCase().includes(input.toLowerCase())
+      ) {
         return true;
       }
     }
