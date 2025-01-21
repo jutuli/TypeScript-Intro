@@ -5,21 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project: Movie Database</title>
     <script type="module" src="main.ts"></script>
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
-  <body>
-    <h1>Movies for YOU</h1>
-    <h2>The best Movie Database</h2>
-    <form>
+  <body class="bg-stone-200">
+    <h1
+      class="mt-28 mb-6 text-center text-5xl font-bold text-gray-900 font-stretch-semi-expanded"
+    >
+      Movies for YOU
+    </h1>
+    <h2 class="mb-10 text-center text-2xl font-bold text-gray-800">
+      The best Movie Database
+    </h2>
+    <form class="my-6 flex items-center justify-center gap-4">
       <input
+        class="w-100 rounded-4xl bg-slate-100 px-4 py-3"
         type="text"
         name="search"
         id="search-input"
         placeholder="What are you looking for?"
       />
-      <button type="submit">SEARCH</button>
+      <button
+        class="rounded-4xl bg-orange-600 px-10 py-3 font-bold text-slate-100"
+        type="submit"
+      >
+        SEARCH
+      </button>
     </form>
-    <button type="button">Year Up</button>
-    <button type="button">Yearp Down</button>
-    <button type="button">Best Rating</button>
+    <div class="btn-group flex items-center justify-center gap-4">
+      <button
+        class="rounded-4xl border border-orange-600 bg-transparent px-10 py-3 font-semibold text-gray-900"
+        type="button"
+      >
+        YEAR UP
+      </button>
+      <button
+        class="rounded-4xl border border-orange-600 bg-transparent px-10 py-3 font-semibold text-gray-900"
+        type="button"
+      >
+        YEAR DOWN
+      </button>
+      <button
+        class="rounded-4xl border border-orange-600 bg-transparent px-10 py-3 font-semibold text-gray-900"
+        type="button"
+      >
+        BEST RATING
+      </button>
+    </div>
+    <section id="movie-grid"></section>
   </body>
 </html>
