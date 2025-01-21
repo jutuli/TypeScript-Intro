@@ -25,6 +25,7 @@ function searchMovies(input: string) {
         <p></p>`;
     }
   }
+  return matchingMovies;
 }
 
 export default searchMovies;
