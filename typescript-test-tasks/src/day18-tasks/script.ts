@@ -135,6 +135,7 @@ const minuteInput = document.querySelector<HTMLInputElement>("#minutes");
 const startButton = document.querySelector("#start-button");
 const pauseButton = document.querySelector("#pause-button");
 const restartButton = document.querySelector("#restart-button");
+const resetButton = document.querySelector("#reset-button");
 
 function createCountdown(): void {
   if (
@@ -142,40 +143,47 @@ function createCountdown(): void {
     !minuteInput ||
     !startButton ||
     !pauseButton ||
-    !restartButton
+    !restartButton ||
+    !resetButton
   )
     return;
 
-  // Remaining Seconds & IntervalId auf 0 initialisieren, um Abgleich und späteres Löschen/Überschreiben zu ermöglichen
+  // Remaining Seconds, intial Seconds & IntervalId auf 0 bzw. null initialisieren, um Abgleich und späteres Löschen/Überschreiben zu ermöglichen
   let remainingSeconds: number = 0;
-  let intervalId: number = 0;
-  //InputValue auslesen und in Sekunden umrechnen (falls kein Input wird 1 Minute gesetzt)
-  const inputValue = parseInt(minuteInput.value) || 1;
-  const initialSeconds = inputValue * 60;
+  let initialSeconds: number = 0;
+  let intervalId: number | null = null;
 
-  // Countdown starten
-  startButton.addEventListener("click", () => {
-    //mehrfaches Starten vermeiden
-    if (intervalId !== 0) return;
+  // Start Interval Fn
+  const startInterval = () => {
     // Start des Countdowns setzen (wenn kein Zahlen-Input, dann 1 Minute) falls es nicht das Weiterlaufen des Countdowns ist (also remainingSeconds > 0 ist)
     if (remainingSeconds === 0) {
+      //InputValue auslesen und in Sekunden umrechnen (falls kein Input wird 1 Minute gesetzt)
+      const inputValue = parseInt(minuteInput.value) || 1;
+      initialSeconds = inputValue * 60;
       remainingSeconds = initialSeconds;
     }
-
     // Display initial setzen
     updateDisplay();
     // Countdown starten
     intervalId = setInterval(() => {
       // wenn Zeit abgelaufe, Countdown stoppen
-      if (remainingSeconds <= 0) {
+      if (remainingSeconds <= 0 && intervalId) {
         clearInterval(intervalId);
-        intervalId = 0;
+        intervalId = null;
       } else {
         remainingSeconds--;
         updateDisplay();
       }
     }, 1000);
-  });
+  };
+
+  // Pause Interval Fn
+  const pauseInterval = () => {
+    if (intervalId) {
+      clearInterval(intervalId);
+      intervalId = null;
+    }
+  };
 
   // Aktualisieren der Countdown-Anzeige
   const updateDisplay = () => {
@@ -184,17 +192,34 @@ function createCountdown(): void {
     timeDisplay.textContent = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
   };
 
-  // Countdown unterbrechen
-  pauseButton.addEventListener("click", () => {
-    clearInterval(intervalId);
-    intervalId = 0;
+  // Countdown starten bei Klick auf Start Button
+  startButton.addEventListener("click", () => {
+    //mehrfaches Starten vermeiden
+    if (intervalId) return;
+    startInterval();
   });
 
-  // Countdown zurücksetzen auf initialen Wert -> Neustart dann mit erneutem Klick auf Start-Button
+  // Countdown unterbrechen
+  pauseButton.addEventListener("click", () => {
+    pauseInterval();
+  });
+
+  // Countdown zurücksetzen auf initialen Wert & Neustart des Timers
   restartButton.addEventListener("click", () => {
-    clearInterval(intervalId);
+    pauseInterval();
     // remainingSeconds auf initialen Inputwert zurücksetzen
     remainingSeconds = initialSeconds;
+
+    startInterval();
+    updateDisplay();
+  });
+
+  resetButton.addEventListener("click", () => {
+    pauseInterval();
+    intervalId = null;
+
+    // remainingSeconds auf initialen Inputwert zurücksetzen
+    remainingSeconds = 0;
     updateDisplay();
   });
 }
