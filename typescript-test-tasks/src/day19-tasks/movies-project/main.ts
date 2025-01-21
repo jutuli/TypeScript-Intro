@@ -1,30 +1,15 @@
 import createMovieCard from "./components/MovieCard";
+import searchMovies from "./components/MovieSearch";
+import {
+  sortBestRating,
+  sortYearDown,
+  sortYearUp,
+} from "./components/MovieSorting";
 import movies from "./movies";
 
 createMovieCard(movies);
 
-function searchMovies(input: string) {
-  const matchingMovies = movies.filter((movie) => {
-    for (const element of movie) {
-      if (element.includes(input)) {
-        return true;
-      }
-    }
-    return false;
-  });
-  if (matchingMovies.length > 0) {
-    createMovieCard(matchingMovies);
-  } else {
-    const movieGrid = document.querySelector("#movie-grid");
-    if (movieGrid) {
-      movieGrid.classList.remove("grid-cols-3");
-      movieGrid.innerHTML =
-        "<p class='font-lg font-bold text-center'>Es wurde kein passender Film gefunden.</p>";
-    }
-  }
-}
-
-// Funktionsaufruf durch Button Click auf Search
+// Klick auf "Search" Button ermöglicht Filterung der angezeigten Ergebnisse
 document.querySelector("#submit-btn")?.addEventListener("click", (e) => {
   e.preventDefault();
   // Input auslesen
@@ -32,3 +17,18 @@ document.querySelector("#submit-btn")?.addEventListener("click", (e) => {
   const searchInputValue = searchInput?.value || "";
   searchMovies(searchInputValue);
 });
+
+// Klick auf "Year Up" Button ermöglicht Sortierung nach Jahr (aufsteigend)
+document
+  .querySelector("#year-up-btn")
+  ?.addEventListener("click", () => sortYearUp());
+
+// Klick auf "Year Down" Button ermöglicht Sortierung nach Jahr (absteigend)
+document
+  .querySelector("#year-down-btn")
+  ?.addEventListener("click", () => sortYearDown());
+
+// Klick auf "Best Rating" Button ermöglicht Sortierung nach Rating (absteigend)
+document
+  .querySelector("#best-rating-btn")
+  ?.addEventListener("click", () => sortBestRating());
