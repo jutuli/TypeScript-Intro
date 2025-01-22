@@ -72,3 +72,42 @@ fetch("https://jsonplaceholder.typicode.com/posts")
   });
 
 // - ===================== LEVEL 2_1 =====================
+// Nutze wieder die [Picsum API](https://picsum.photos/v2/list)
+// Da du dir die Daten jetzt schon in der Konsole ausgeben lassen kannst, darfst du als nächstes für jeden Datensatz eine Kombination aus Bild und Autor:in in ein figure-Element wrappen und in deinem HTML ausgeben lassen
+// Fange mögliche Fehler beim Aufruf der API ab und zeige sie in der Konsole an
+// Verwende appendChild für die Darstellung der Element
+// Gib dem img-Tag in deinem CSS eine Breite von 50%, damit das Ganze nicht zu unübersichtlich wird.
+
+const picGrid = document.querySelector("#pic-grid");
+
+type PicObject = {
+  id: number;
+  author: string;
+  width: number;
+  height: number;
+  url: string;
+  download_url: string;
+};
+
+function createPictureGallery(): void {
+  // falls es Elternelement nicht gibt, Funktionsaufruf beenden
+  if (!picGrid) return;
+  // ansonsten Daten holen und verarbeiten
+  fetch("https://picsum.photos/v2/list")
+    .then((response) => response.json())
+    .then((data) => {
+      data.forEach((element: PicObject) => {
+        const figureElement = document.createElement("figure");
+        figureElement.className = "flex flex-col items-center justify-center";
+        figureElement.innerHTML = `
+        <img class="w-1/2 " src="${element.download_url}">
+        <figcaption>${element.author}</figcaption>`;
+        picGrid.appendChild(figureElement);
+      });
+    })
+    .catch((error) =>
+      console.log("There has been an error. Error Message: ", error),
+    );
+}
+
+createPictureGallery();
