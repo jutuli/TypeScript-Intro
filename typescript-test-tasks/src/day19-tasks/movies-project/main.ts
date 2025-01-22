@@ -18,6 +18,7 @@ document.querySelector("#submit-btn")?.addEventListener("click", (e) => {
   searchMovies(searchInputValue);
 });
 
+// Beim Eintippen beginnt bereits die Suche
 document.querySelector("#search-input")?.addEventListener("input", () => {
   // Input auslesen
   const searchInput = document.querySelector<HTMLInputElement>("#search-input");
