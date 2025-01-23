@@ -4,14 +4,14 @@
 
 import { waitForTwoSeconds, waitForTwoSecondsPromise } from "./patient-waiter";
 
-// async function main() {
-//   console.log("Hi, here I am ...");
-//   waitForTwoSeconds();
-//   console.log("Hello...");
-//   console.log("Can you hear me?");
-// }
+async function main() {
+  console.log("Hi, here I am ...");
+  waitForTwoSeconds();
+  console.log("Hello...");
+  console.log("Can you hear me?");
+}
 
-// main();
+main();
 
 // Lege eine asynchrone Funktion mit dem Namen main an
 // Schreibe in der Funktion auf die Konsole “Hi, here I am…”
