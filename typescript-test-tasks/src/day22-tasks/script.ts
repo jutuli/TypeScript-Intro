@@ -45,21 +45,31 @@ fetch("https://the-trivia-api.com/v2/questions")
       `;
       quizContainer.appendChild(quizElement);
     });
+    // Buttonfarbe je nach richtiger/falscher Antwort
     document.querySelectorAll("button").forEach((button) => {
       button.addEventListener("click", () => {
-        console.log("button was clicked");
-        button.classList.remove(
-          "hover:bg-amber-500",
-          "hover:text-white",
-          "hover:font-bold",
-        );
+        // alle Buttons der jeweiligen Frage holen & Farbe ändern + disablen
+        const answerList = button.closest("ul");
+        const allButtons = answerList?.querySelectorAll("button");
+        if (allButtons) {
+          allButtons.forEach((button) => {
+            button.classList.remove(
+              "hover:bg-amber-500",
+              "hover:text-white",
+              "hover:font-bold",
+              "border-amber-500",
+            );
+            button.classList.add("bg-gray-200", "text-gray-500");
+            button.disabled = true;
+          });
+        }
+        // Richtige/falsche Antwort jeweils anders einfärben
         if (button.classList.contains("incorrect-btn")) {
+          button.classList.remove("bg-gray-200", "text-gray-500");
           button.classList.add("bg-red-500", "text-white", "font-bold");
-          button.disabled = true;
-          button;
         } else {
+          button.classList.remove("bg-gray-200", "text-gray-500");
           button.classList.add("bg-green-500", "text-white", "font-bold");
-          button.disabled = true;
         }
       });
     });
