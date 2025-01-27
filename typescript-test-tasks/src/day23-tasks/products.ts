@@ -27,12 +27,14 @@ async function getProducts() {
 }
 
 // getProducts() ausführen und in Array speichern
-const allProducts = await getProducts();
+export const allProducts = await getProducts();
 
 // Produkte in DOM schreiben
-export async function renderProducts() {
-  if (!allProducts || !productsContainer) return;
-  allProducts.forEach((product: Product) => {
+export async function renderProducts(selectedProducts: Product[]) {
+  if (!selectedProducts || !productsContainer) return;
+  // Container leeren bevor neu gerendert wird
+  productsContainer.innerHTML = "";
+  selectedProducts.forEach((product: Product) => {
     productsContainer.innerHTML += `
     <li
             class="h-96 flex flex-col justify-between rounded-md border border-gray-100 bg-white p-4 shadow-md "
