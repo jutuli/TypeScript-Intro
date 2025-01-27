@@ -1,4 +1,4 @@
-import { allProducts } from "./products";
+import { allProducts } from "./Products";
 
 allProducts;
 

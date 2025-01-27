@@ -3,7 +3,7 @@ import ky from "ky";
 // DOM-Elemente holen
 const productsContainer = document.querySelector("#products-list");
 
-type Product = {
+export type Product = {
   category: string;
   image: string;
   price: number;
