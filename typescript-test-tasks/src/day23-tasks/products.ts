@@ -53,7 +53,7 @@ export async function renderProductCards(selectedProducts: Product[]) {
             <div class="flex items-center justify-between">
               <p class="text-xl font-bold text-green-900">$ ${product.price}</p>
               <button
-                class="rounded-md bg-green-900 border border-green-900 px-4 py-2 font-bold tracking-wide text-slate-100 hover:bg-white hover:text-green-900"
+                class="rounded-md bg-green-900 border border-green-900 px-4 py-2 font-bold tracking-wide text-slate-100 hover:bg-white hover:text-green-900 hover:cursor-pointer"
               >
                 Add to Cart
               </button>
