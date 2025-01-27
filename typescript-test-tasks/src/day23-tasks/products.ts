@@ -30,7 +30,7 @@ async function getProducts() {
 export const allProducts = await getProducts();
 
 // Produkte in DOM schreiben
-export async function renderProducts(selectedProducts: Product[]) {
+export async function renderProductCards(selectedProducts: Product[]) {
   if (!selectedProducts || !productsContainer) return;
   // Container leeren bevor neu gerendert wird
   productsContainer.innerHTML = "";
