@@ -7,7 +7,81 @@
     <script type="module" src="script.ts"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <h1>SuperFakeStore</h1>
+  <body
+    class="mx-40 my-6 flex min-h-screen flex-col items-center gap-6 bg-slate-100"
+  >
+    <h1 class="text-4xl font-bold tracking-wide text-cyan-900">
+      SuperFakeStore
+    </h1>
+    <header
+      class="flex w-full flex-col gap-10 rounded-md bg-cyan-900 p-6 text-white"
+    >
+      <section id="search-sort-container" class="flex justify-between">
+        <input
+          type="text"
+          name="search"
+          id="search-product"
+          placeholder="Search for a product"
+          class="w-1/2 rounded-md bg-white p-2 text-gray-950"
+        />
+        <select
+          name="sort"
+          id="sort-product"
+          class="w-1/6 rounded-md bg-white p-2 text-gray-950"
+        >
+          <option value="default">Sort by</option>
+          <option value="price-asc">Price Ascending</option>
+          <option value="price-desc">Price Descending</option>
+          <option value="rating-asc">Rating Ascending</option>
+          <option value="ratng-desc">Rating Descending</option>
+        </select>
+      </section>
+      <section id="category-filter-container" class="flex items-center gap-40">
+        <h2 class="text-lg font-semibold">Filter by Category</h2>
+        <ul id="category-list" class="flex items-center gap-10">
+          <li>
+            <button
+              class="rounded-md border border-white bg-transparent px-10 py-2 font-semibold hover:bg-white hover:text-cyan-900"
+            >
+              Category 1
+            </button>
+          </li>
+          <li>
+            <button
+              class="rounded-md border border-white bg-transparent px-10 py-2 font-semibold hover:bg-white hover:text-cyan-900"
+            >
+              Category 1
+            </button>
+          </li>
+          <li>
+            <button
+              class="rounded-md border border-white bg-transparent px-10 py-2 font-semibold hover:bg-white hover:text-cyan-900"
+            >
+              Category 1
+            </button>
+          </li>
+        </ul>
+      </section>
+    </header>
+    <main class="w-full">
+      <section id="products-container">
+        <ul id="products-list" class="mx-auto grid grid-cols-4 gap-4">
+          <li
+            class="h-96 rounded-md border border-gray-100 bg-white p-4 shadow-md"
+          >
+            LALA
+          </li>
+          <li class="rounded-md border border-gray-100 bg-white p-4 shadow-md">
+            LALA
+          </li>
+          <li class="rounded-md border border-gray-100 bg-white p-4 shadow-md">
+            LALA
+          </li>
+          <li class="rounded-md border border-gray-100 bg-white p-4 shadow-md">
+            LALA
+          </li>
+        </ul>
+      </section>
+    </main>
   </body>
 </html>
