@@ -37,15 +37,17 @@ export async function renderProductCards(selectedProducts: Product[]) {
   selectedProducts.forEach((product: Product) => {
     productsContainer.innerHTML += `
     <li
-            class="h-96 flex flex-col justify-between rounded-md border border-gray-100 bg-white p-4 shadow-md "
+            class="h-[420px] flex flex-col justify-between rounded-md border border-gray-100 bg-white p-4 shadow-md "
           >
             <div class="my-2 flex flex-col gap-4">
+              <div class="h-48 flex items-center justify-center">
                 <img
                   src="${product.image}"
                   alt="Product Image"
                   class="max-h-48 object-contain"
                 />
-              <h3 class="text-lg font-semibold">${product.title}</h3>
+              </div>
+              <h3 class="text-lg font-semibold line-clamp-2">${product.title}</h3>
               <p class="text-right font-bold">${product.rating.rate} ⭐️</p>
             </div>
             <div class="flex items-center justify-between">
