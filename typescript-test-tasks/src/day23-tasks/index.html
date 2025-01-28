@@ -16,18 +16,18 @@
     <header
       class="flex w-full flex-col gap-10 rounded-md bg-cyan-900 p-6 text-white"
     >
-      <section id="search-sort-container" class="flex justify-between">
+      <section id="search-sort-container" class="flex justify-between gap-4">
         <input
           type="text"
           name="search"
           id="search-product"
           placeholder="Search for a product"
-          class="w-1/2 rounded-md bg-white p-2 text-gray-950"
+          class="flex-3 rounded-md bg-white p-2 text-gray-950"
         />
         <select
           name="sort"
           id="sort-product"
-          class="w-1/6 rounded-md bg-white p-2 text-gray-950"
+          class="flex-1 rounded-md bg-white p-3 text-gray-950"
         >
           <option value="default">Sort by</option>
           <option value="price-asc">Price Ascending</option>
@@ -35,6 +35,21 @@
           <option value="rating-asc">Rating Ascending</option>
           <option value="ratng-desc">Rating Descending</option>
         </select>
+        <button
+          class="flex cursor-pointer items-center rounded-full border-2 border-slate-100 p-2 hover:bg-slate-100"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+            class="fill-slate-100 hover:fill-cyan-900"
+          >
+            <path
+              d="M10 19.5c0 .829-.672 1.5-1.5 1.5s-1.5-.671-1.5-1.5c0-.828.672-1.5 1.5-1.5s1.5.672 1.5 1.5zm3.5-1.5c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm6.305-15l-3.432 12h-10.428l-3.777-9h-2.168l4.615 11h13.239l3.474-12h1.929l.743-2h-4.195z"
+            />
+          </svg>
+        </button>
       </section>
       <section id="category-filter-container" class="flex items-center gap-30">
         <h2 class="text-lg font-semibold">Filter by Category</h2>
