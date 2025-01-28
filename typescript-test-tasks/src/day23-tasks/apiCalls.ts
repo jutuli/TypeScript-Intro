@@ -31,4 +31,12 @@ async function getCategories() {
 }
 
 // getCategories() ausführen und in Array speichern
-export const allCategories = await getCategories();
+export let allCategories = await getCategories();
+// jede Kategorie soll den Anfangsbuchstaben von jedem Wort großgeschrieben haben
+allCategories = allCategories?.map((category) =>
+  category
+    // Category unterteilen in einzelne Wörter, erstes Zeichen großschreiben und wieder zusammenfügen
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" "),
+);

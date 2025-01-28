@@ -12,6 +12,7 @@ export function searchProducts(input: string) {
   return matchingProducts;
 }
 
+// Filterfunktion um Produkte nach Kategorie zu filtern
 export function filterByCategory(category: string) {
   if (!allProducts) return;
   const matchingProducts = allProducts.filter(
