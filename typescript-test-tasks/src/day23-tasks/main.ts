@@ -4,11 +4,13 @@ import { renderProductCards } from "./productCards.ts";
 import { Product } from "./types.ts";
 import { filterByCategory, searchProducts } from "./productFiltering.ts";
 import { sortByPriceAsc, sortByRatingAsc } from "./productSorting.ts";
+import { addToCart } from "./shoppingCart.ts";
 
 // Elemente aus DOM holen für Interaktion mit der Seite
 const searchInput = document.querySelector<HTMLInputElement>("#search-product");
 const categoriesContainer = document.querySelector("#category-list");
 const sortSelect = document.querySelector<HTMLSelectElement>("#sort-product");
+const productsContainer = document.querySelector("#products-container");
 
 // Seite initial mit allen Produkten laden
 if (allProducts && allProducts.length > 0) {
@@ -26,20 +28,18 @@ searchInput?.addEventListener("input", () => {
 });
 
 // Eventlistener für das Filtern nach Kategorie
-if (categoriesContainer) {
-  // Da Elemente erst später gerendert werden, wird der Eventlistener auf den Container gesetzt
-  categoriesContainer.addEventListener("click", (event) => {
-    // mit target wird das Element geholt, auf das geklickt wurde (wir wollen nur auf die Buttons reagieren)
-    const button = <HTMLButtonElement>event.target;
-    // Wenn das Button-Element eine Klasse filter-btn hat, wird die Funktion filterByCategory aufgerufen
-    if (button.className.includes("filter-btn")) {
-      const filteredProducts = filterByCategory(button.id);
-      if (filteredProducts) {
-        renderProductCards(filteredProducts);
-      }
+// Da Elemente erst später gerendert werden, wird der Eventlistener auf den Container gesetzt
+categoriesContainer?.addEventListener("click", (event) => {
+  // mit target wird das Element geholt, auf das geklickt wurde (wir wollen nur auf die Buttons reagieren)
+  const button = <HTMLButtonElement>event.target;
+  // Wenn das Button-Element eine Klasse filter-btn hat, wird die Funktion filterByCategory aufgerufen
+  if (button.className.includes("filter-btn")) {
+    const filteredProducts = filterByCategory(button.id);
+    if (filteredProducts) {
+      renderProductCards(filteredProducts);
     }
-  });
-}
+  }
+});
 
 // Eventlistener für das Sortieren nach Preis/Rating
 sortSelect?.addEventListener("change", () => {
@@ -62,5 +62,28 @@ sortSelect?.addEventListener("change", () => {
       sortedProducts = sortByRatingAsc().reverse();
       renderProductCards(sortedProducts);
       break;
+  }
+});
+
+// Eventlistener für das Hinzufügen von Produkten zum Warenkorb
+productsContainer?.addEventListener("click", (event) => {
+  const button = <HTMLButtonElement>event.target;
+  // Wenn das Button-Element eine Klasse filter-btn hat, wird die Funktion filterByCategory aufgerufen
+  if (button.className.includes("add-to-cart-btn")) {
+    // ProductCard holen, um die ID des Produkts zu bekommen
+    const productCard = button.closest("li");
+    if (productCard) {
+      const productId = productCard.id;
+      // Alle Produkte nach der ProductId durchsuchen, um das Produkt dann dem Shopping-Cart hinzuzufügen
+      const selectedProduct = allProducts?.find(
+        (product) => product.id === productId,
+      );
+      if (selectedProduct) {
+        addToCart(selectedProduct);
+      }
+      button.textContent = "Added to Cart";
+      button.classList.remove("bg-green-900", "text-slate-100");
+      button.classList.add("bg-white", "text-green-900");
+    }
   }
 });
