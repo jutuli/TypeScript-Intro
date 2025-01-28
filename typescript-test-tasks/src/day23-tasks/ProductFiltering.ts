@@ -1,4 +1,4 @@
-import { allProducts } from "./Products";
+import { allProducts } from "./apiCalls.ts";
 
 allProducts;
 

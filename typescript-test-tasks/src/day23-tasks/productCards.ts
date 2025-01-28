@@ -1,33 +1,7 @@
-import ky from "ky";
+import { Product } from "./types.ts";
 
 // DOM-Elemente holen
 const productsContainer = document.querySelector("#products-list");
-
-export type Product = {
-  category: string;
-  image: string;
-  price: number;
-  rating: {
-    count: number;
-    rate: number;
-  };
-  title: string;
-};
-
-// Alle Produkte von der API holen
-async function getProducts() {
-  try {
-    const productData: Product[] = await ky
-      .get("https://fakestoreapi.com/products")
-      .json();
-    return productData;
-  } catch (error) {
-    console.log("There has been an error: ", error);
-  }
-}
-
-// getProducts() ausführen und in Array speichern
-export const allProducts = await getProducts();
 
 // Produkte in DOM schreiben
 export async function renderProductCards(selectedProducts: Product[]) {

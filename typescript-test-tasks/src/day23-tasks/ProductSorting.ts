@@ -1,4 +1,5 @@
-import { allProducts, Product } from "./Products.ts";
+import { allProducts } from "./apiCalls.ts";
+import { Product } from "./types.ts";
 
 export function sortByPriceAsc(): Product[] {
   // falls es all Products nicht gibt, dann empty Array zurückgeben

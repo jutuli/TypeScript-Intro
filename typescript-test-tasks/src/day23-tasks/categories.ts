@@ -1,22 +1,7 @@
-import ky from "ky";
+import { allCategories } from "./apiCalls.ts";
 
 // DOM-Elemente holen
 const categoriesContainer = document.querySelector("#category-list");
-
-// Alle Kategorien von der API holen
-async function getCategories() {
-  try {
-    const categoryData: string[] = await ky
-      .get("https://fakestoreapi.com/products/categories")
-      .json();
-    return categoryData;
-  } catch (error) {
-    console.log("There has been an error: ", error);
-  }
-}
-
-// getCategories() ausführen und in Array speichern
-const allCategories = await getCategories();
 
 // Kategorien in DOM schreiben
 export async function renderCategories() {
