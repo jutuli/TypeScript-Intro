@@ -4,7 +4,7 @@ import { renderProductCards } from "./productCards.ts";
 import { Product } from "./types.ts";
 import { filterByCategory, searchProducts } from "./productFiltering.ts";
 import { sortByPriceAsc, sortByRatingAsc } from "./productSorting.ts";
-import { addToCart } from "./shoppingCart.ts";
+import { addToCart, renderCartCount } from "./shoppingCart.ts";
 
 // Elemente aus DOM holen für Interaktion mit der Seite
 const searchInput = document.querySelector<HTMLInputElement>("#search-product");
@@ -72,14 +72,14 @@ productsContainer?.addEventListener("click", (event) => {
   if (button.className.includes("add-to-cart-btn")) {
     // ProductCard holen, um die ID des Produkts zu bekommen
     const productCard = button.closest("li");
-    if (productCard) {
-      const productId = productCard.id;
-      // Alle Produkte nach der ProductId durchsuchen, um das Produkt dann dem Shopping-Cart hinzuzufügen
-      const selectedProduct = allProducts?.find(
-        (product) => product.id === productId,
+    if (productCard && allProducts) {
+      // Alle Produkte nach der ProductCard-Id durchsuchen, um das Produkt dann dem Shopping-Cart hinzuzufügen
+      const selectedProduct = allProducts.find(
+        (product: Product) => product.id.toString() === productCard.id,
       );
       if (selectedProduct) {
         addToCart(selectedProduct);
+        renderCartCount();
       }
       button.textContent = "Added to Cart";
       button.classList.remove("bg-green-900", "text-slate-100");

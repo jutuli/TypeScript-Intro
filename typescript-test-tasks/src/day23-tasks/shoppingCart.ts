@@ -1,8 +1,21 @@
 import { Product } from "./types.ts";
 
-const shoppingCart: Product[] = [];
+// Elemente aus DOM holen
+const cartCountElement = document.querySelector("#shopping-cart-count");
+
+export const shoppingCart: Product[] = [];
 
 // Elemente zum Shopping-Cart hinzufügen
 export function addToCart(product: Product) {
   shoppingCart.push(product);
+}
+
+// Produktanzahl des Shopping-Carts in DOM anzeigen
+export function renderCartCount() {
+  console.log(shoppingCart);
+  const cartCount = shoppingCart.length;
+  if (cartCount === 0) return;
+  if (cartCountElement) {
+    cartCountElement.textContent = `${cartCount}`;
+  }
 }

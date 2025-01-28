@@ -36,12 +36,17 @@
           <option value="ratng-desc">Rating Descending</option>
         </select>
         <button
-          class="flex cursor-pointer items-center rounded-full border-2 border-slate-100 p-2 hover:bg-slate-100"
+          id="shopping-cart"
+          class="relative flex aspect-square cursor-pointer flex-col items-center justify-center rounded-full border-2 border-slate-100 p-2 hover:bg-slate-100"
         >
+          <span
+            id="shopping-cart-count"
+            class="absolute top-0.5 left-3.5 text-sm font-bold text-yellow-300"
+          ></span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="32"
-            height="32"
+            width="24"
+            height="24"
             viewBox="0 0 24 24"
             class="fill-slate-100 hover:fill-cyan-900"
           >
