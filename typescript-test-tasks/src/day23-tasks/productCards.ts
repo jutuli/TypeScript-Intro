@@ -1,5 +1,5 @@
+import { shoppingCart } from "./shoppingCart.ts";
 import { Product } from "./types.ts";
-
 // DOM-Elemente holen
 const productsContainer = document.querySelector("#products-list");
 
@@ -11,7 +11,7 @@ export async function renderProductCards(selectedProducts: Product[]) {
   selectedProducts.forEach((product: Product) => {
     productsContainer.innerHTML += `
     <li
-            id="${product.id}" class="h-[420px] flex flex-col justify-between rounded-md border border-gray-100 bg-white p-4 shadow-md "
+            id="${product.id}" class="product-${product.id} h-[420px] flex flex-col justify-between rounded-md border border-gray-100 bg-white p-4 shadow-md "
           >
             <div class="my-2 flex flex-col gap-4">
               <div class="h-48 flex items-center justify-center">
@@ -34,5 +34,16 @@ export async function renderProductCards(selectedProducts: Product[]) {
             </div>
           </li>
     `;
+    // falls das Produkt bereits im Warenkorb ist, wird der Button des jeweiligen Produkts angepasst gerendered
+    if (shoppingCart.includes(product)) {
+      const button = productsContainer.querySelector(
+        `.product-${product.id} .add-to-cart-btn`,
+      );
+      console.log(button);
+      if (!button) return;
+      button.textContent = "Added to Cart";
+      button.classList.remove("bg-green-900", "text-slate-100");
+      button.classList.add("bg-white", "text-green-900");
+    }
   });
 }

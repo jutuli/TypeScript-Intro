@@ -7,12 +7,12 @@ export const shoppingCart: Product[] = [];
 
 // Elemente zum Shopping-Cart hinzufügen
 export function addToCart(product: Product) {
+  if (shoppingCart.includes(product)) return;
   shoppingCart.push(product);
 }
 
 // Produktanzahl des Shopping-Carts in DOM anzeigen
 export function renderCartCount() {
-  console.log(shoppingCart);
   const cartCount = shoppingCart.length;
   if (cartCount === 0) return;
   if (cartCountElement) {
