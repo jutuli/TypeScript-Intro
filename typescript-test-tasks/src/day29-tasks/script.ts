@@ -133,10 +133,33 @@ console.log(calculateArea(rectangle));
 console.log(calculateArea(triangle));
 
 // Teste auf den Fall, wenn undefined übergeben wird
-console.log(calculateArea(undefined));
+// console.log(calculateArea(undefined));
 
 // ! ======================= INTERSECTION TYPES ==================
 // - ==================== LEVEL 1_1 ==================
+// Erstelle zwei Types, Alcohol und Mixer, die jeweils Eigenschaften für alkoholische Getränke und Mischgetränke definieren.
+// Alcohol hat die Eigenschaften: name, percentage und type
+
+type Alcohol = { name: string; percentage: number; type: string };
+// Mixer hat die Eigenschaften: name, type und carbonated
+
+type Mixer = { name: string; type: string; carbonated: boolean };
+
+// Lege anschließend einen Intersection-Typ namens Cocktail an, der sowohl die Eigenschaften von Alcohol als auch von Mixer enthält.
+
+type Cocktail = Alcohol & Mixer;
+
+// Erstelle ein Objekt vom Typ Cocktail und weise ihm entsprechende Eigenschaften zu.
+
+const margarita: Cocktail = {
+  name: "Margarita",
+  percentage: 40,
+  type: "Tequila",
+  carbonated: false,
+};
+
+// Gib die Eigenschaften des Cocktails auf der Konsole aus, um sicherzustellen, dass der Typ korrekt erstellt wurde.
+console.log(margarita);
 
 // - ==================== LEVEL 1_2 ==================
 
