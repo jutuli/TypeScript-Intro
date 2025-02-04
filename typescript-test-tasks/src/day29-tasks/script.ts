@@ -267,4 +267,34 @@ console.log(
   `While generating the lotto numbers, there has been ${errorCount} error(s).`,
 );
 
-// - ==================== LEVEL 2_1 ==================
+// - ==================== LEVEL 2_2 ==================
+// Schreibe eine Funktion getCurrentPosition, die die Geolocation-API verwendet, um die aktuellen Koordinaten des Benutzers abzurufen. siehe https://www.w3schools.com/html/html5_geolocation.asp
+
+function getCurrentPosition() {
+  // Verwende einen try-catch-Block um Fehler abgefangen werden, falls der Browser die Geolocation-API nicht unterstützt oder der Benutzer die Berechtigung zur Standortfreigabe verweigert.
+  try {
+    if (!navigator.geolocation)
+      throw new Error("The browser does not support Geolocation.");
+
+    // Falls die Koordinaten erfolgreich abgerufen werden, gib sie mit window.confirm aus.
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        window.confirm(
+          `This is your current position: Latitude ${position.coords.latitude}, Longitude ${position.coords.longitude}`,
+        );
+      },
+      function (error) {
+        // Falls ein Fehler auftritt, gib eine entsprechende Fehlermeldung mit window.alert aus.
+        window.alert("The current position cannot be fetched.");
+        console.error(error);
+      },
+    );
+  } catch (error) {
+  } finally {
+    // Logge im [finally]-Block auf die Konsole “getCurrentPosition finished”
+    console.log("getCurrentPosition finished");
+  }
+}
+
+// auf ButtonClick die Funktion triggern
+document.querySelector("button")?.addEventListener("click", getCurrentPosition);
