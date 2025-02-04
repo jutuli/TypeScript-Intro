@@ -162,6 +162,53 @@ const margarita: Cocktail = {
 console.log(margarita);
 
 // - ==================== LEVEL 1_2 ==================
+// Schreibe ein Funktion mixCocktail mit zwei Parametern
+// alcohol: Alcohol
+// mixer: Mixer
+// Rückgabewert ist vom Intersection-Type Cocktail
+// das zurückgegebene Objekt soll die Eigenschaften vom übergebenen alcohol und mixer enthalten
+// bei Feld name wird eine Kombination aus beiden Objekten gesetzt, z. B.  alcohol.name = ‘Wodka’ und [mixer.name](http://mixer.name) = ‘Lemon’ ⇒ ‘Wodka Lemon’
+
+function mixCocktail(alcohol: Alcohol, mixer: Mixer): Cocktail {
+  const cocktail = {
+    name: `${alcohol.name} ${mixer.name}`,
+    percentage: alcohol.percentage,
+    type: `${alcohol.type} ${mixer.type}`,
+    carbonated: mixer.carbonated,
+  };
+  return cocktail;
+}
+
+// Lege 2 Alkohol und zwei Mischgetränke an
+
+const vodka: Alcohol = {
+  name: "Vodka",
+  percentage: 40,
+  type: "Spirit",
+};
+
+const orangeJuice: Mixer = {
+  name: "Orange",
+  type: "Juice",
+  carbonated: false,
+};
+
+const gin: Alcohol = {
+  name: "Gin",
+  percentage: 40,
+  type: "Spirit",
+};
+
+const tonicWater: Mixer = {
+  name: "Tonic",
+  type: "Soda",
+  carbonated: true,
+};
+
+// Rufe die Methode mixCocktail mit allen Kombinationen auf
+
+console.log(mixCocktail(vodka, orangeJuice));
+console.log(mixCocktail(gin, tonicWater));
 
 // ! ======================= ERROR HANDLING ==================
 // - ==================== LEVEL 1_1 ==================
