@@ -217,21 +217,54 @@ console.log(mixCocktail(gin, tonicWater));
 function greetUser() {
   try {
     const userName = window.prompt("What is your name?");
+    // Werfe selbst einen Fehler, wenn kein Name eingegeben wurde
     if (!userName) throw new Error("No username was entered.");
+    // Wenn der Benutzer einen Namen eingibt, gib eine personalisierte Begrüßung aus, die den Namen des Benutzers verwendet.
     console.log(`Hello ${userName}! Good to see you.`);
+    // Verwende dann einen try-catch-Block, um diesen Fehler beim Abrufen des Benutzernamens abzufangen.
   } catch (Error) {
     console.log(Error);
+    // Wenn ein Fehler auftritt (z. B. wenn der Benutzer den Dialog schließt), gib eine Standardbegrüßung aus.
     console.log("Hello and welcome!");
   }
 }
 
 greetUser();
 
-// Werfe selbst einen Fehler, wenn kein Name eingegeben wurde
-// Verwende dann einen try-catch-Block, um diesen Fehler beim Abrufen des Benutzernamens abzufangen.
-// Wenn der Benutzer einen Namen eingibt, gib eine personalisierte Begrüßung aus, die den Namen des Benutzers verwendet.
-// Wenn ein Fehler auftritt (z. B. wenn der Benutzer den Dialog schließt), gib eine Standardbegrüßung aus.
-
 // - ==================== LEVEL 1_2 ==================
+// Schreibe eine Funktion generateLottoNumber, die eine Lottozahl generiert.
+
+function generateLottoNumber(): number {
+  // generiere dort eine Zufallszahl zwischen 1 und 100 mit Math.random().
+  const randomNumber = Math.ceil(Math.random() * 100);
+  // Wenn die random erstellte Zahl größer als 49 ist, soll ein Fehler ausgelöst werden.
+  if (randomNumber > 49) throw new Error("The number is greater than 49.");
+  // Ansonsten wird die Zahl als Rückgabewert zurückgegeben
+  return randomNumber;
+}
+
+// Rufe in einer Schleife so oft generateLottoNumber auf, bis du 7 gültige Zahlen erhältst
+// Verwende einen try-catch-Block, um Fehler abzufangen und zu behandeln. Schreib die generierte Lottozahl in ein Array lottoResults: number[], wenn kein Fehler aufgetreten ist.
+
+let errorCount = 0;
+const lottoResults: number[] = [];
+
+while (lottoResults.length < 7) {
+  try {
+    const lottoNumber = generateLottoNumber();
+    // Es dürfen keine doppelten Zahlen in lottoResults aufgenommen werden
+    if (!lottoResults.includes(lottoNumber)) {
+      lottoResults.push(lottoNumber);
+    }
+  } catch (error) {
+    errorCount++;
+  }
+}
+
+// Lass dir am Ende die Lottozahlenreihe auf der Konsole ausgeben
+console.log(lottoResults);
+console.log(
+  `While generating the lotto numbers, there has been ${errorCount} error(s).`,
+);
 
 // - ==================== LEVEL 2_1 ==================
