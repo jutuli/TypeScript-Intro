@@ -212,6 +212,25 @@ console.log(mixCocktail(gin, tonicWater));
 
 // ! ======================= ERROR HANDLING ==================
 // - ==================== LEVEL 1_1 ==================
+// Schreibe eine Funktion greetUser, die einen Benutzernamen vom Benutzer über ein Window-Prompt abfragt.
+
+function greetUser() {
+  try {
+    const userName = window.prompt("What is your name?");
+    if (!userName) throw new Error("No username was entered.");
+    console.log(`Hello ${userName}! Good to see you.`);
+  } catch (Error) {
+    console.log(Error);
+    console.log("Hello and welcome!");
+  }
+}
+
+greetUser();
+
+// Werfe selbst einen Fehler, wenn kein Name eingegeben wurde
+// Verwende dann einen try-catch-Block, um diesen Fehler beim Abrufen des Benutzernamens abzufangen.
+// Wenn der Benutzer einen Namen eingibt, gib eine personalisierte Begrüßung aus, die den Namen des Benutzers verwendet.
+// Wenn ein Fehler auftritt (z. B. wenn der Benutzer den Dialog schließt), gib eine Standardbegrüßung aus.
 
 // - ==================== LEVEL 1_2 ==================
 
