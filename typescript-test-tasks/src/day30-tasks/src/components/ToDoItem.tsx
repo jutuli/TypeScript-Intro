@@ -2,6 +2,7 @@ type ToDoItemProps = {
   toDo: string;
   checked: boolean;
 };
+
 function ToDoItem(props: ToDoItemProps) {
   return (
     <li className="flex gap-2">

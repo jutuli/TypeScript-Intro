@@ -1,6 +1,11 @@
-import { Product } from "../data";
+type ProductProps = {
+  key: number;
+  img: string;
+  productName: string;
+  price: number;
+};
 
-function ProductCard(props: Product) {
+function ProductCard(props: ProductProps) {
   return (
     <li className="flex aspect-square flex-col gap-2 drop-shadow-md">
       <img className="m-2 rounded-md" src={props.img} alt={props.productName} />

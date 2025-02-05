@@ -7,6 +7,7 @@ function RenderProducts() {
       {products.map((product) => {
         return (
           <ProductCard
+            key={product.id}
             img={product.img}
             productName={product.productName}
             price={product.price}

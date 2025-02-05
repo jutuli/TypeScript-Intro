@@ -5,7 +5,9 @@ function ToDoList() {
   return (
     <ul className="m-4">
       {todos.map((toDo) => {
-        return <ToDoItem toDo={toDo.toDo} checked={toDo.isCompleted} />;
+        return (
+          <ToDoItem key={toDo.id} toDo={toDo.toDo} checked={toDo.isCompleted} />
+        );
       })}
     </ul>
   );
