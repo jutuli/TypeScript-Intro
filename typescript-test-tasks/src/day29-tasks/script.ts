@@ -290,9 +290,10 @@ function getCurrentPosition() {
       },
     );
   } catch (error) {
+    console.log(error);
   } finally {
     // Logge im [finally]-Block auf die Konsole “getCurrentPosition finished”
-    console.log("getCurrentPosition finished");
+    console.log("getCurrentPosition finished.");
   }
 }
 
