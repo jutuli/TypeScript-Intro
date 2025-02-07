@@ -1,3 +1,5 @@
+//- key wird intern von React genutzt, d.h. es muss nicht in ProductProps aufgeführt werden!
+
 type ProductProps = {
   key: number;
   img: string;

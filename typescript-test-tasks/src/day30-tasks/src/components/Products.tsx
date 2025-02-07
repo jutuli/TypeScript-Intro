@@ -19,3 +19,5 @@ function RenderProducts() {
 }
 
 export default RenderProducts;
+
+// der Key muss nicht unbedingt die Id sein, aber es muss unique sein => daher ist Id am besten
