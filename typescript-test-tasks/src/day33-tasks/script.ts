@@ -25,6 +25,8 @@ console.log(partialBook2);
 // Lege eine Variable basicBook vom Typ BasicBook an und vergebe nur die nötigen Eigenschaften
 // Lege dann ein neues Interface IBasicBook basierend auf IBook an, bei dem ebenfalls publishingYear und shortDescription fehlen
 // Lege eine Variable basicBook2 vom Typ IBasicBook an und vergebe nur die nötigen Eigenschaften
+import { basicBook } from "./basic-book";
+console.log(basicBook);
 
 // - ========================== UTILITY TYPES - LEVEL 1_3 ==========================
 
