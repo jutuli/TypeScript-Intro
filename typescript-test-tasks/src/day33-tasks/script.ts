@@ -79,7 +79,7 @@ console.log(readonlyBook, readonlyBook2);
 //  Übergebe einen gültigen Wert
 
 import { showColors } from "./colors";
-showColors("BLACK");
+// showColors("BLACK");
 showColors("BLUE");
 
 // - ========================== UTILITY TYPES - LEVEL 2_1 ==========================
@@ -90,6 +90,9 @@ showColors("BLUE");
 // Gib einen Fehler auf der Konsole aus, falls name und brewingTime nicht gesetzt sind und brich die Funktion ab
 // Lege ein Objekt vom Typ ITea an und übergebe es der Methode prepareTea
 // Lege ein Objekt vom Typ PartialTea an und übergebe es der Methode prepareTea
+
+import { peppermintTea, prepareTea, greenTea } from "./tea";
+console.log(prepareTea(peppermintTea), prepareTea(greenTea));
 
 // - ========================== UTILITY TYPES - LEVEL 3_1 ==========================
 // Lege eine neue Datei smoothie.ts an
