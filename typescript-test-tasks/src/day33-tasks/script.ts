@@ -78,6 +78,10 @@ console.log(readonlyBook, readonlyBook2);
 //  Versuche ‘BLACK’ zu übergeben
 //  Übergebe einen gültigen Wert
 
+import { showColors } from "./colors";
+showColors("BLACK");
+showColors("BLUE");
+
 // - ========================== UTILITY TYPES - LEVEL 2_1 ==========================
 // Lege eine neue Datei tea.ts an
 // Erstelle dort ein Interface ITea mit folgenden Eigenschaften: name, type, temperature, brewingTime
