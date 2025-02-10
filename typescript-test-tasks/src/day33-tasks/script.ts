@@ -102,3 +102,6 @@ console.log(prepareTea(peppermintTea), prepareTea(greenTea));
 // Die Funktion soll die Eigenschaften aus den beiden Objekten kombinieren
 // Wenn eine Eigenschaft im customizedSmoothie gesetzt ist, soll sie die Eigenschaft im basicSmoothie überschreiben
 // Rückgabewert der Funktion ist ISmoothie
+
+import { customizeSmoothie, myCustomization, mySmoothie } from "./smoothie";
+console.log(customizeSmoothie(mySmoothie, myCustomization));
