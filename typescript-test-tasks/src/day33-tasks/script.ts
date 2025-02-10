@@ -65,6 +65,9 @@ console.log(requiredBook, requiredBook2);
 // Lege eine Variable readonlyBook2 vom Typ IReadOnlyBook an und vergebe alle nötigen Eigenschaften und Werte
 // Versuche nachträglich Werte zu setzen
 
+import { readonlyBook, readonlyBook2 } from "./readonly-book";
+console.log(readonlyBook, readonlyBook2);
+
 // - ========================== UTILITY TYPES - LEVEL 1_6 ==========================
 //  Lege eine neue Datei an colors.ts an
 //  Erstelle dort einen neuen Type BasicColors mit den möglichen Werten:RED, BLUE, GREEN, YELLOW, BLACK, WHITE
