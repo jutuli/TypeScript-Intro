@@ -12,6 +12,10 @@
 // Lege dann ein neues Interface IPartialBook basierend auf IBook an
 // Lege eine Variable partialBook2 vom Typ IPartialBook an und vergeben nur die Eigenschaft name
 
+import { partialBook, partialBook2 } from "./partial-book";
+console.log(partialBook);
+console.log(partialBook2);
+
 // - ========================== UTILITY TYPES - LEVEL 1_2 ==========================
 // Lege eine neue Datei an basic-book.ts an
 // Erstelle dort einen neuen Type BasicBook basierend auf IBook
