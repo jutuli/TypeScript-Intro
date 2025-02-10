@@ -25,6 +25,7 @@ console.log(partialBook2);
 // Lege eine Variable basicBook vom Typ BasicBook an und vergebe nur die nötigen Eigenschaften
 // Lege dann ein neues Interface IBasicBook basierend auf IBook an, bei dem ebenfalls publishingYear und shortDescription fehlen
 // Lege eine Variable basicBook2 vom Typ IBasicBook an und vergebe nur die nötigen Eigenschaften
+
 import { basicBook } from "./basic-book";
 console.log(basicBook);
 
@@ -38,6 +39,10 @@ console.log(basicBook);
 // Lege eine Variable bookDescription vom Typ BookDescription an und vergebe nur die nötigen Eigenschaften
 // Lege dann ein neues Interface IBookDescription basierend auf IBook an - ebenfalls name und shortDescription von IBook übernehmen
 // Lege eine Variable bookDescription2 vom Typ IBookDescription an und vergebe nur die nötigen Eigenschaften
+
+import { bookDescription, bookDescription2 } from "./book-description";
+console.log(bookDescription);
+console.log(bookDescription2);
 
 // - ========================== UTILITY TYPES - LEVEL 1_4 ==========================
 // Lege eine neue Datei an required-book.ts an
