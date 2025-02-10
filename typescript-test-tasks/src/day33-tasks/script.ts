@@ -52,6 +52,9 @@ console.log(bookDescription2);
 // Lege dann ein neues Interface IRequiredBook basierend auf IBook an ⇒ alle Eigenschaften sind auch hier Pflicht
 // Lege eine Variable requiredBook2 vom Typ IRequiredBook an und vergebe alle nötigen Eigenschaften
 
+import { requiredBook, requiredBook2 } from "./required-books";
+console.log(requiredBook, requiredBook2);
+
 // - ========================== UTILITY TYPES - LEVEL 1_5 ==========================
 // Lege eine neue Datei an readonly-book.ts an
 // Erstelle dort einen neuen Type ReadOnlyBook basierend auf IBook
