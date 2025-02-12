@@ -102,7 +102,87 @@ console.log(jane);
 
 // Lege 3 Serien mit ein paar Episoden und Darsteller:innen an
 
+import Series from "./Series";
+import Episode from "./Episode";
+import Actor from "./Actor";
+
+const breakingBad = new Series(
+  "Breaking Bad",
+  "A high school chemistry teacher turned meth manufacturer.",
+  2008,
+  2013,
+  [
+    new Episode(
+      "Pilot",
+      "58 min",
+      "A high school chemistry teacher turned meth manufacturer.",
+      [
+        new Actor("Bryan", "Cranston", new Date("1956-03-07"), "Male"),
+        new Actor("Aaron", "Paul", new Date("1979-08-27"), "Male"),
+      ],
+    ),
+    new Episode(
+      "Cat's in the Bag...",
+      "48 min",
+      "Walter and Jesse clean up after the first drug deal goes wrong.",
+      [
+        new Actor("Bryan", "Cranston", new Date("1956-03-07"), "Male"),
+        new Actor("Aaron", "Paul", new Date("1979-08-27"), "Male"),
+      ],
+    ),
+  ],
+);
+
+const friends = new Series(
+  "Friends",
+  "Follows the personal and professional lives of six twenty to thirty-something-year-old friends living in Manhattan.",
+  1994,
+  2004,
+  [
+    new Episode(
+      "The One Where It All Began",
+      "22 min",
+      "Monica and the gang introduce Rachel to the real world after she leaves her fiancé at the altar.",
+      [
+        new Actor("Jennifer", "Aniston", new Date("1969-02-11"), "Female"),
+        new Actor("Matthew", "Perry", new Date("1969-08-19"), "Male"),
+      ],
+    ),
+    new Episode(
+      "The One With The Blackout",
+      "22 min",
+      "During a city-wide power outage, Ross tries to tell Rachel that he likes her, and Chandler gets stuck in an ATM vestibule with a model.",
+      [
+        new Actor("Jennifer", "Aniston", new Date("1969-02-11"), "Female"),
+        new Actor("Matthew", "Perry", new Date("1969-08-19"), "Male"),
+      ],
+    ),
+  ],
+);
+
 // Schreibe eine Funktion printSeriesInfo(series: Series), die beispielhaft für eine Serie Folgendes auf der Konsole ausgibt.
+
+function printSeries(series: Series) {
+  const allActors: Actor[] = series.episodes.flatMap(
+    (episode) => episode.actors,
+  );
+  console.log(`
+        Title: ${series.title}
+        Description: ${series.description}
+        Start Year: ${series.startYear}
+        End Year: ${series.endYear}
+        Number of Episodes: ${series.episodes.length}
+        Actors: ${allActors.map(
+          (actor) => `
+            ${actor.firstName} ${actor.lastName}
+            Birth Year: ${actor.birthday.getFullYear()}
+            Gender: ${actor.gender}
+            `,
+        )}
+        `);
+}
+
+printSeries(breakingBad);
 // Title: Breaking Bad
 // Description: A high school chemistry teacher turned methamphetamine manufacturer
 // Start Year: 2008
