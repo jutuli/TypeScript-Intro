@@ -39,6 +39,32 @@ console.log(alphaClass, betaClass, gammaClass);
 // Lass dir alle Personen aus der Schulklasse ausgeben
 // du kannst eine Schleife zur Erstellung von den Personen benutzen.
 
+import { SchoolClass } from "./SchoolClass";
+import { Student } from "./Student";
+
+const deltaStudents: Student[] = [];
+
+const maxMustermann: Student = new Student(
+  1,
+  "Max",
+  "Mustermann",
+  new Date(2016, 6, 12),
+);
+
+const erikaMusterfrau: Student = new Student(
+  2,
+  "Erika",
+  "Musterfrau",
+  new Date(2016, 7, 3),
+);
+
+deltaStudents.push(maxMustermann);
+deltaStudents.push(erikaMusterfrau);
+
+const deltaClass: SchoolClass = new SchoolClass(4, "Delta", deltaStudents);
+
+console.log(deltaClass);
+
 // - ========================== LEVEL 2_2 ==========================
 // Erstelle eine Klasse Car mit folgenden Eigenschaften: brand (Marke), constructionYear(Baujahr), currentSpeed (aktuelle Geschwindigkeit)
 // Überlege dir sinnvolle Datentypen für die Eigenschaften.
