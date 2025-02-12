@@ -6,6 +6,13 @@
 // Lege die 4 Instanzen in einem Array ab
 // Lass dir von allen populären Eissorten (isPopular) den Namen auf der Konsole ausgeben
 
+import { iceCreamFlavors } from "./IceCreamFlavor";
+
+const popularFlavors = iceCreamFlavors.filter(
+  (flavor) => flavor.isPopular === true,
+);
+console.log(popularFlavors);
+
 // - ========================== LEVEL 1_2 ==========================
 // Lege in einer neuen Datei eine Klasse mit dem Namen SchoolClass an
 // Im Konstruktor der Klasse SchoolClass soll auf der Konsole ausgegeben werden: “School class creation successful”
