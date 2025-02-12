@@ -21,6 +21,15 @@ console.log(popularFlavors);
 // Lege drei SchoolClasses an - sie müssen mit Konstruktorparametern angelegt werden
 // Ändere bei zwei SchoolClasses nachträglich den Namen über das Setzen der Eigenschaft
 
+import { alphaClass, betaClass, gammaClass } from "./SchoolClass";
+
+console.log(alphaClass, betaClass, gammaClass);
+
+alphaClass.name = "Alpha One";
+betaClass.name = "Beta Two";
+
+console.log(alphaClass, betaClass, gammaClass);
+
 // - ========================== LEVEL 2_1 ==========================
 // Wir wollen unsere Schulklassenverwaltung (SchoolClass) nun weiter ausbauen.
 // Wir möchte die Schulklasse mit Leben füllen und brauchen dafür eine Klasse Person mit folgenden Attributen/Eigenschaften: id, firstName, lastName, birthday
