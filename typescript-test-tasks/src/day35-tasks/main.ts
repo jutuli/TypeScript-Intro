@@ -163,8 +163,19 @@ const friends = new Series(
 // Schreibe eine Funktion printSeriesInfo(series: Series), die beispielhaft für eine Serie Folgendes auf der Konsole ausgibt.
 
 function printSeries(series: Series) {
-  const allActors: Actor[] = series.episodes.flatMap(
-    (episode) => episode.actors,
+  // Array, der die Schauspieler nur einzeln aufführt
+  const allActors: Actor[] = [];
+  // Dopplung von Schauspielern vermeiden
+  series.episodes.flatMap((episode) =>
+    episode.actors.forEach((actor) => {
+      if (
+        !allActors.some(
+          (a) =>
+            a.firstName === actor.firstName && a.lastName === actor.lastName,
+        )
+      )
+        allActors.push(actor);
+    }),
   );
   console.log(`
         Title: ${series.title}
@@ -184,6 +195,7 @@ function printSeries(series: Series) {
 
 printSeries(breakingBad);
 printSeries(friends);
+
 // Title: Breaking Bad
 // Description: A high school chemistry teacher turned methamphetamine manufacturer
 // Start Year: 2008
