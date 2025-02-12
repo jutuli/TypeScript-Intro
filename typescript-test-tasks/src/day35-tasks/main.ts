@@ -183,6 +183,7 @@ function printSeries(series: Series) {
 }
 
 printSeries(breakingBad);
+printSeries(friends);
 // Title: Breaking Bad
 // Description: A high school chemistry teacher turned methamphetamine manufacturer
 // Start Year: 2008
