@@ -73,6 +73,17 @@ console.log(deltaClass);
 // Im Konstruktor von Driver soll bereits das zugehörige Auto übergeben und gesetzt werden.
 // Zu guter Letzt sollst du in der Datei app.ts, mehrere Autos und Fahrer erstellen und miteinander verknüpfen
 
+import Driver from "./Driver";
+import Car from "./Car";
+
+const amg = new Car("Mercedes", 2017, 180);
+const john = new Driver("John", "Doe", 31, amg);
+console.log(john);
+
+const golf = new Car("Volkswagen", 2009, 160);
+const jane = new Driver("Jane", "Doe", 32, golf);
+console.log(jane);
+
 // - ========================== LEVEL 3_1 ==========================
 // Wir wollen die Grundlagen für eine Streaming-App schaffen.
 // Hierzu brauchen wir die Klassen: Series (= Serie), Episode (=Episode) und Actor (=Darsteller:in)
