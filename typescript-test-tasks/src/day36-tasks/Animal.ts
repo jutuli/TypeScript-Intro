@@ -1,7 +1,7 @@
 class Animal {
-  _species: string;
-  _age: number;
-  _color: string;
+  private _species: string;
+  private _age: number;
+  private _color: string;
 
   constructor(species: string, age: number, color: string) {
     (this._species = species), (this._age = age), (this._color = color);
@@ -13,7 +13,7 @@ class Animal {
     this._species = value;
   }
   get age(): number {
-    return this.age;
+    return this._age;
   }
   set age(value: number) {
     this._age = value;

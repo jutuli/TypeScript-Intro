@@ -45,7 +45,6 @@ aspargus.printInfo();
 // soll es eine Methode getCarType(): CarType geben, die den CarType des aktuellen Autos als Text ausgibt
 
 import Car from "./Car";
-import Driver from "./Driver";
 import CarType from "./CarType";
 
 const aKlasse = new Car("Mercedes", 2016, 185, CarType.Suv);
