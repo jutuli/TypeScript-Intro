@@ -30,8 +30,8 @@ aspargus.printInfo();
 // - ================================= LEVEL 1_13 ==============================
 // Wir bauen auf den Klassen Car und Driver auf [OOP-Class-TS-Level-2_2]
 // in der Klasse Car
-// soll constructionYear nur über den Konstruktor gesetzt werden können → Wert ist nur über einen Getter (get-Methode) abrufbar
-// soll es eine Methode getSpeedInfo(): string geben mit dieser Logik geben
+// => soll constructionYear nur über den Konstruktor gesetzt werden können → Wert ist nur über einen Getter (get-Methode) abrufbar
+// => soll es eine Methode getSpeedInfo(): string geben mit dieser Logik geben
 // currentSpeed ≤ 40 → Rückgabewert ‘Driving slowly’
 // currentSpeed > 40 und ≤ 70 → Rückgabewert ‘Driving normally’
 // currentSpeed > 70 und ≤ 120 → Rückgabewert ‘Driving fast’
@@ -43,6 +43,14 @@ aspargus.printInfo();
 // in der Klasse Driver
 // soll es eine weitere Eigenschaft licenseFromYear: number geben, die nur über den Konstruktor gesetzt werden kann→ Wert ist nur über einen Getter (get-Methode) abrufbar
 // soll es eine Methode getCarType(): CarType geben, die den CarType des aktuellen Autos als Text ausgibt
+
+import Car from "./Car";
+import Driver from "./Driver";
+import CarType from "./CarType";
+
+const aKlasse = new Car("Mercedes", 2016, 185, CarType.Suv);
+console.log(aKlasse.getCarType());
+console.log(aKlasse.getSpeedInfo());
 
 // - ================================= LEVEL 2_3 ===============================
 // Definiere eine Klasse Customer
