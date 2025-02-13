@@ -59,3 +59,28 @@ console.log(aKlasse.getSpeedInfo());
 // vor dem Setzen des Namens soll geprüft werden, dass die Länge 60 Zeichen nicht überschreitet. Beim Überschreiten soll eine sinnvolle Fehlermeldung auf der Konsole ausgegeben werden. Der Wert wird dann nicht gesetzt.
 // vor dem Setzen der E-Mail-Adresse soll geprüft werden, ob die Adresse ein @-Zeichen und einen Punkt enthält. Ggf. soll eine sinnvolle Fehlermeldung auf der Konsole ausgegeben werden. Der Wert wird dann nicht gesetzt.
 // vor dem Setzen der Postleitzahl (postalCode) soll geprüft werden, ob die Postleitzahl 5-stellig ist und zwischen 00000 und 99999 liegt. Ggf. soll eine sinnvolle Fehlermeldung auf der Konsole ausgegeben werden. Der Wert wird dann nicht gesetzt.
+
+import Customer from "./Customer";
+
+const johnDoe = new Customer(
+  "John Doe",
+  "john.doe@acme.com",
+  "Kurfürstendamm 107",
+  "10719",
+  "Berlin",
+);
+
+console.log(johnDoe);
+// johnDoe.name =
+("Jooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooon Doe"); // ERROR
+johnDoe.name = "Johnny Doe";
+console.log(johnDoe.name);
+
+// johnDoe.email = "johndoeacme.de"; // ERROR
+johnDoe.email = "john.doe@acme.de";
+console.log(johnDoe.email);
+
+// johnDoe.postalCode = "1234567"; // ERROR
+// johnDoe.postalCode = "f4t5w"; // ERROR
+johnDoe.postalCode = "15393";
+console.log(johnDoe.postalCode);
