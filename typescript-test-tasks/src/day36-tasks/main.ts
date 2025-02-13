@@ -2,7 +2,7 @@
 // Definiere eine Klasse Animal
 // sie soll die Eigenschaften species (string), age (number) und color (string) enthalten
 // Implementiere Get- und Set-Methoden für jede Eigenschaft.
-// Definiere eine weitere Klasse Person, die die Eigenschaften name ****(string), birthday (Date) und gender (Enum) enthält.
+// Definiere eine weitere Klasse Person, die die Eigenschaften name (string), birthday (Date) und gender (Enum) enthält.
 // Implementiere Get- und Set-Methoden für name und gender, birthday soll im Konstruktor gesetzt werden und ansonsten nur eine Get-Methode haben.
 
 // - ================================= LEVEL 1_12 ==============================
@@ -17,6 +17,15 @@
 // Bonus
 // Stelle alle IceCreamFlavors als Divs im HTML mit Name, Preis und einer Kennzeichnung bei populären Eissorten (z. B. Stern) dar
 // Pro IceCreamFlavor soll es einen Button +1 geben, mit dem man die Anzahl der Kugeln nach oben setzen kann → es soll dann jeweils die getTotalPrice-Methode der entsprechenden IceCreamFlavor-Instanz aufgerufen und das Ergebnis auch im HTML angezeigt werden
+
+import { aspargus } from "./IceCramFlavors";
+
+console.log(
+  "The Description Lenght in Characters is: ",
+  aspargus.getLengthOfDescription(),
+);
+console.log("The total price in € is: ", aspargus.getTotalPrice(2));
+aspargus.printInfo();
 
 // - ================================= LEVEL 1_13 ==============================
 // Wir bauen auf den Klassen Car und Driver auf [OOP-Class-TS-Level-2_2]
